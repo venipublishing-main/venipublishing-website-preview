@@ -326,3 +326,21 @@ summary{cursor:pointer;font-weight:900}
 }
 
 .kids-brand img{width:68px;height:53px;object-fit:contain}.theme-kids .brand-copy strong{color:#173d29}.theme-kids .brand-copy small{color:#46714d}
+
+/* v1.1: preserve the featured book cover's natural print proportions. */
+.feature-release .book-cover{
+  width:min(100%,380px);
+  max-width:380px;
+  justify-self:center;
+  align-self:center;
+}
+.feature-release .book-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+}
+@media(max-width:760px){
+  .feature-release .book-cover{width:min(100%,430px);max-width:430px;margin-inline:auto}
+}
