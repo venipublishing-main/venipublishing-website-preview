@@ -1,0 +1,9 @@
+{
+  "name": "Veni Publishing",
+  "short_name": "Veni",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6efdf",
+  "theme_color": "#0e2f2b",
+  "icons": []
+}
