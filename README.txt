@@ -1,13 +1,20 @@
-VENI PUBLISHING HOMEPAGE PATCH v1.2
+VENI KIDS QA PATCH v1.3
 
-Replace these three files in the preview repository:
-  index.html
-  assets/css/site.css
-  assets/js/site.js
+Replace the matching files in the temporary preview repository.
 
-Changes:
-- Five orbit circles are now platform links.
-- Hover/focus labels and subtle bronze glow added.
-- Central Veni shield remains non-clickable on the homepage.
-- Featured section is carousel-ready for future rotating items.
-- Footer coordinates replaced with Pretoria, South Africa.
+Included changes:
+- Dedicated Veni Kids footer throughout /kids/; no cross-promotion of adult platforms.
+- Desktop navigation now says Parents & Teachers.
+- /kids/ gains an Explorer's Corner / Book Extras section.
+- The four hero facts are restyled and aligned consistently.
+- Animals book page replaces inactive fake buttons with availability badges.
+- Internal QR-management wording is replaced by a public-facing link back to Veni Kids.
+- Parents & Teachers gains a 'What children practise' section.
+- Coordinates are removed from all Veni Kids footers.
+- No fake downloads, purchase URLs or final cover changes have been introduced.
+
+Deferred intentionally:
+- Final book-card/cover treatment after the final cover is supplied.
+- Real free download(s) after the activity pages are finalised.
+- Veni Kids social/display package and Instagram branding.
+- Purchase buttons until Amazon/Payhip URLs are live.
