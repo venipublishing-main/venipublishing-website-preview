@@ -1,20 +1,15 @@
-VENI KIDS QA PATCH v1.3
+VENI KIDS HEADER CONSISTENCY PATCH v1.3.1
 
-Replace the matching files in the temporary preview repository.
+This patch locks the Veni Kids masthead to a consistent height and logo/brand size
+across:
+- /kids/
+- /kids/books/
+- /kids/freebies/
+- /kids/parents-teachers/
+- /kids/animals/
 
-Included changes:
-- Dedicated Veni Kids footer throughout /kids/; no cross-promotion of adult platforms.
-- Desktop navigation now says Parents & Teachers.
-- /kids/ gains an Explorer's Corner / Book Extras section.
-- The four hero facts are restyled and aligned consistently.
-- Animals book page replaces inactive fake buttons with availability badges.
-- Internal QR-management wording is replaced by a public-facing link back to Veni Kids.
-- Parents & Teachers gains a 'What children practise' section.
-- Coordinates are removed from all Veni Kids footers.
-- No fake downloads, purchase URLs or final cover changes have been introduced.
+Desktop masthead: 78px
+Tablet/mobile masthead: 70px
+Very small phones retain the same masthead height with proportionally smaller logo text.
 
-Deferred intentionally:
-- Final book-card/cover treatment after the final cover is supplied.
-- Real free download(s) after the activity pages are finalised.
-- Veni Kids social/display package and Instagram branding.
-- Purchase buttons until Amazon/Payhip URLs are live.
+The page-specific hero sections below the masthead are intentionally allowed to differ.
