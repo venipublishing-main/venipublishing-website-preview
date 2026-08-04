@@ -673,3 +673,73 @@ summary{cursor:pointer;font-weight:900}
     letter-spacing:.11em;
   }
 }
+
+
+/* v1.3.2 — equalise the Veni Kids utility-page logo/title intro block */
+.theme-kids .page-hero{
+  padding:0;
+}
+.theme-kids .page-hero > .container{
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding-top:2.2rem;
+  padding-bottom:2.2rem;
+}
+.theme-kids .page-hero .kids-logo-large{
+  width:150px;
+  height:118px;
+  object-fit:contain;
+  margin:0 0 .85rem;
+  flex:0 0 auto;
+}
+.theme-kids .page-hero h1{
+  width:100%;
+  max-width:1050px;
+  font-size:clamp(2.35rem,4vw,3.55rem);
+  line-height:1.04;
+  letter-spacing:-.035em;
+}
+.theme-kids .page-hero p{
+  min-height:2.4em;
+  max-width:760px;
+  margin:.85rem auto 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+@media(max-width:760px){
+  .theme-kids .page-hero > .container{
+    min-height:320px;
+    padding-top:1.8rem;
+    padding-bottom:1.8rem;
+  }
+  .theme-kids .page-hero .kids-logo-large{
+    width:132px;
+    height:104px;
+  }
+  .theme-kids .page-hero h1{
+    max-width:620px;
+    font-size:clamp(2rem,8vw,2.8rem);
+  }
+  .theme-kids .page-hero p{
+    min-height:3.5em;
+    margin-top:.75rem;
+  }
+}
+
+@media(max-width:480px){
+  .theme-kids .page-hero > .container{
+    min-height:300px;
+  }
+  .theme-kids .page-hero .kids-logo-large{
+    width:120px;
+    height:95px;
+  }
+  .theme-kids .page-hero h1{
+    font-size:clamp(1.9rem,9.5vw,2.45rem);
+  }
+}
