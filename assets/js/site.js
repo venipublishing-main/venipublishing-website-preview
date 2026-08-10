@@ -118,4 +118,49 @@
       render(0);
     }
   }
+
+
+  const panelDialog = document.querySelector('[data-panel-dialog]');
+  if (panelDialog) {
+    const panelProfiles = Array.from(panelDialog.querySelectorAll('[data-panel-profile]'));
+    const closeButton = panelDialog.querySelector('[data-panel-close]');
+    let lastPanelTrigger = null;
+
+    document.querySelectorAll('[data-panel-open]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute('data-panel-open');
+        const target = panelProfiles.find((profile) => profile.getAttribute('data-panel-profile') === key);
+        if (!target) return;
+
+        panelProfiles.forEach((profile) => {
+          profile.hidden = profile !== target;
+        });
+
+        lastPanelTrigger = button;
+        if (typeof panelDialog.showModal === 'function') {
+          panelDialog.showModal();
+        } else {
+          panelDialog.setAttribute('open', '');
+        }
+        closeButton?.focus();
+      });
+    });
+
+    const closePanelDialog = () => {
+      if (typeof panelDialog.close === 'function') panelDialog.close();
+      else panelDialog.removeAttribute('open');
+      lastPanelTrigger?.focus();
+    };
+
+    closeButton?.addEventListener('click', closePanelDialog);
+
+    panelDialog.addEventListener('click', (event) => {
+      if (event.target === panelDialog) closePanelDialog();
+    });
+
+    panelDialog.addEventListener('close', () => {
+      panelProfiles.forEach((profile) => profile.hidden = true);
+    });
+  }
+
 })();

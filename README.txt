@@ -1,17 +1,27 @@
-VENI KIDS PAGE-INTRO CONSISTENCY PATCH v1.3.2
+AI GEOPOLITIC QA PATCH v1.4
 
-Correction to v1.3.1:
-v1.3.1 standardised the navigation masthead.
-The visible mismatch was actually the page-intro block below it
-(Veni Kids logo + page heading + description).
+Apply to the existing temporary preview repository.
 
-v1.3.2 standardises that intro area on:
-- /kids/books/
-- /kids/freebies/
-- /kids/parents-teachers/
+Included:
+- Actual six locked portraits.
+- Locked panel order: NORA, Diane Sterling, Johan Vosloo, Kai Patel, Thabo Mokoena, Amari Ndlovu.
+- Desktop 3x2 panel layout.
+- Horizontally swipeable panel on mobile.
+- Tap/click profile dialog for each panelist.
+- Ideological lens, role, character bio, recurring focus, typical question,
+  analytical strength, and potential blind spot.
+- 'How a briefing works' section.
+- Six real selected briefing slides supplied for the project.
+- Instagram active; YouTube clearly marked planned.
+- No POD/shop or fake purchase links.
+- AI Geopolitic-specific footer with a quiet link back to Veni Publishing.
+- Editorial separation statement.
+- Coordinates removed from the AI Geopolitic footer.
 
-The Parents & Teachers title uses the same controlled heading scale, so it no longer
-increases the overall intro-section height relative to Books or Free Activities.
+Files replaced:
+  ai-geopolitic/index.html
+  assets/css/site.css
+  assets/js/site.js
 
-The special /kids/ homepage hero and the /kids/animals/ product hero remain intentionally
-different page designs.
+New assets:
+  assets/images/ai-selected-*.webp
