@@ -1476,3 +1476,37 @@ summary{cursor:pointer;font-weight:900}
   .v09-profile-content{padding:.3rem .3rem .8rem}
   .v09-record-grid,.v09-profile-two{grid-template-columns:1fr}
 }
+
+
+/* v1.6.2 — headshot cards + locality/system dossiers */
+.v09-person-image{height:220px}
+.v09-person-image img{object-position:var(--thumb-pos,50% 18%)}
+
+.v09-info-grid{display:grid;gap:1rem}
+.v09-district-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.v09-system-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v09-info-card,.v09-system-card{background:#091214;border:1px solid #294447;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.22)}
+.v09-info-open{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.v09-info-thumb{display:block;height:190px;overflow:hidden;background:#050b0c;border-bottom:1px solid #294447}
+.v09-info-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--thumb-pos,50% 18%);transition:transform .28s ease,filter .28s ease}
+.v09-info-copy{display:flex;flex-direction:column;min-height:175px;padding:1rem 1rem .95rem}
+.v09-info-copy small{color:#5fa5a2;font-size:.56rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.v09-info-copy strong{margin:.35rem 0 .15rem;color:#e5ece8;font-family:Georgia,"Times New Roman",serif;font-size:1.4rem;font-weight:500;line-height:1.05}
+.v09-info-copy>span{margin-top:.45rem;color:#8fa29e;font-size:.78rem;line-height:1.5}
+.v09-info-copy b{margin-top:auto;padding-top:.8rem;color:#67c5c2;font-size:.61rem;text-transform:uppercase;letter-spacing:.1em}
+.v09-info-open:hover .v09-info-thumb img,.v09-info-open:focus-visible .v09-info-thumb img{transform:scale(1.035);filter:brightness(1.08)}
+.v09-info-open:focus-visible{outline:3px solid #67c5c2;outline-offset:-3px}
+.v09-info-profile{display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr);gap:1.35rem;clear:both}
+.v09-info-profile[hidden]{display:none}
+
+@media(max-width:1100px){
+  .v09-district-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  .v09-district-grid,.v09-system-grid{display:flex;overflow-x:auto;gap:.85rem;padding:.15rem .2rem 1rem;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin}
+  .v09-info-card,.v09-system-card{flex:0 0 min(76vw,335px);scroll-snap-align:center}
+}
+@media(max-width:700px){
+  .v09-person-image{height:200px}
+  .v09-info-profile{grid-template-columns:1fr}
+}

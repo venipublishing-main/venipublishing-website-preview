@@ -17,8 +17,8 @@
   <meta name="theme-color" content="#071113">
   <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../assets/css/site.css?v=1.6.1">
-  <script defer src="../../assets/js/site.js?v=1.6.1"></script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=1.6.2">
+  <script defer src="../../assets/js/site.js?v=1.6.2"></script>
 </head>
 <body class="theme-mythos version09" id="top">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -111,7 +111,7 @@
     <div class="v09-personnel-grid" aria-label="Version 0.9 character dossiers">
       <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="duma" aria-label="Open personnel dossier for Duma Vale">
-        <span class="v09-person-image"><img src="../../assets/images/mythos-duma-vale.webp" alt="Duma Vale"></span>
+        <span class="v09-person-image" style="--thumb-pos:52% 13%;"><img src="../../assets/images/mythos-duma-vale.webp" alt="Duma Vale"></span>
         <span class="v09-person-copy">
           <small>SYSTEMS BUILDER // OLD WORKS</small>
           <strong>Duma Vale</strong>
@@ -123,7 +123,7 @@
     </article>
 <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="kai" aria-label="Open personnel dossier for Kai Maseko">
-        <span class="v09-person-image"><img src="../../assets/images/mythos-kai-maseko.webp" alt="Kai Maseko"></span>
+        <span class="v09-person-image" style="--thumb-pos:51% 12%;"><img src="../../assets/images/mythos-kai-maseko.webp" alt="Kai Maseko"></span>
         <span class="v09-person-copy">
           <small>NEXUS GRID ASSURANCE // THE GRID</small>
           <strong>Kai Maseko</strong>
@@ -135,7 +135,7 @@
     </article>
 <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="senzo" aria-label="Open personnel dossier for Senzo “Sen” Jacobs">
-        <span class="v09-person-image"><img src="../../assets/images/v09-senzo-jacobs.webp" alt="Senzo “Sen” Jacobs"></span>
+        <span class="v09-person-image" style="--thumb-pos:55% 10%;"><img src="../../assets/images/v09-senzo-jacobs.webp" alt="Senzo “Sen” Jacobs"></span>
         <span class="v09-person-copy">
           <small>COLLEAGUE // OBSERVER</small>
           <strong>Senzo “Sen” Jacobs</strong>
@@ -147,7 +147,7 @@
     </article>
 <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="pieter" aria-label="Open personnel dossier for Pieter Brand">
-        <span class="v09-person-image"><img src="../../assets/images/v09-pieter-brand.webp" alt="Pieter Brand"></span>
+        <span class="v09-person-image" style="--thumb-pos:50% 11%;"><img src="../../assets/images/v09-pieter-brand.webp" alt="Pieter Brand"></span>
         <span class="v09-person-copy">
           <small>MIDDLE MANAGER // DASHBOARD LOYALIST</small>
           <strong>Pieter Brand</strong>
@@ -159,7 +159,7 @@
     </article>
 <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="mara" aria-label="Open personnel dossier for Mara Naidoo">
-        <span class="v09-person-image"><img src="../../assets/images/v09-mara-naidoo.webp" alt="Mara Naidoo"></span>
+        <span class="v09-person-image" style="--thumb-pos:57% 12%;"><img src="../../assets/images/v09-mara-naidoo.webp" alt="Mara Naidoo"></span>
         <span class="v09-person-copy">
           <small>PUBLIC VOICE // SYSTEM TRUST</small>
           <strong>Mara Naidoo</strong>
@@ -171,7 +171,7 @@
     </article>
 <article class="v09-person-card">
       <button type="button" class="v09-person-open" data-v09-open="bongi" aria-label="Open personnel dossier for Aunty Bongi">
-        <span class="v09-person-image"><img src="../../assets/images/v09-aunty-bongi.webp" alt="Aunty Bongi"></span>
+        <span class="v09-person-image" style="--thumb-pos:47% 14%;"><img src="../../assets/images/v09-aunty-bongi.webp" alt="Aunty Bongi"></span>
         <span class="v09-person-copy">
           <small>SECURITY DESK // INFORMAL INTELLIGENCE</small>
           <strong>Aunty Bongi</strong>
@@ -187,40 +187,120 @@
 
 <section class="section v09-section v09-world" id="nova-gauteng">
   <div class="container">
-    <div class="v09-section-head">
-      <span>FILE // 003</span>
-      <h2>Nova Gauteng</h2>
-      <p>A South African megacity reorganised by super-AI coordination while class disparity survives beneath the interface.</p>
+    <div class="v09-section-head v09-character-head">
+      <div>
+        <span>FILE // 003</span>
+        <h2>Nova Gauteng localities</h2>
+        <p>A South African megacity reorganised by super-AI coordination while class disparity survives beneath the interface. Tap a district to open the full locality dossier.</p>
+      </div>
+      <p class="v09-swipe-note">On mobile: swipe the locality deck, then tap a district to view the full environment sheet.</p>
     </div>
 
-    <div class="v09-world-strip" aria-label="Nova Gauteng districts">
-      <article><img loading="lazy" src="../../assets/images/mythos-the-crown.webp" alt="The Crown"><div><span>01</span><h3>The Crown</h3><p>Elite executive core: polished, protected and optimised.</p></div></article>
-      <article><img loading="lazy" src="../../assets/images/mythos-the-grid.webp" alt="The Grid"><div><span>02</span><h3>The Grid</h3><p>Operational backbone of access, movement and surveillance.</p></div></article>
-      <article><img loading="lazy" src="../../assets/images/mythos-the-fringe.webp" alt="The Fringe"><div><span>03</span><h3>The Fringe</h3><p>Adaptive informal communities living around gaps in formal systems.</p></div></article>
-      <article><img loading="lazy" src="../../assets/images/mythos-the-old-works.webp" alt="The Old Works"><div><span>04</span><h3>The Old Works</h3><p>Legacy infrastructure beneath the city and beyond clean system maps.</p></div></article>
-      <article><img loading="lazy" src="../../assets/images/mythos-the-quiet-estates.webp" alt="The Quiet Estates"><div><span>05</span><h3>The Quiet Estates</h3><p>Private enclaves where security, distance and privilege are designed in.</p></div></article>
+    <div class="v09-info-grid v09-district-grid" aria-label="Nova Gauteng districts">
+      <article class="v09-info-card">
+      <button type="button" class="v09-info-open" data-v09-open-district="crown" aria-label="Open dossier for The Crown">
+        <span class="v09-info-thumb" style="--thumb-pos:50% 18%;"><img loading="lazy" src="../../assets/images/mythos-the-crown.webp" alt="The Crown"></span>
+        <span class="v09-info-copy">
+          <small>EXECUTIVE CORE</small>
+          <strong>The Crown</strong>
+          <span>Elite executive core: polished, protected and optimised.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-info-card">
+      <button type="button" class="v09-info-open" data-v09-open-district="grid" aria-label="Open dossier for The Grid">
+        <span class="v09-info-thumb" style="--thumb-pos:54% 16%;"><img loading="lazy" src="../../assets/images/mythos-the-grid.webp" alt="The Grid"></span>
+        <span class="v09-info-copy">
+          <small>OPERATIONAL BACKBONE</small>
+          <strong>The Grid</strong>
+          <span>Operational backbone of access, movement and surveillance.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-info-card">
+      <button type="button" class="v09-info-open" data-v09-open-district="fringe" aria-label="Open dossier for The Fringe">
+        <span class="v09-info-thumb" style="--thumb-pos:50% 20%;"><img loading="lazy" src="../../assets/images/mythos-the-fringe.webp" alt="The Fringe"></span>
+        <span class="v09-info-copy">
+          <small>ADAPTIVE COMMUNITY</small>
+          <strong>The Fringe</strong>
+          <span>Adaptive informal communities living around gaps in formal systems.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-info-card">
+      <button type="button" class="v09-info-open" data-v09-open-district="oldworks" aria-label="Open dossier for The Old Works">
+        <span class="v09-info-thumb" style="--thumb-pos:54% 18%;"><img loading="lazy" src="../../assets/images/mythos-the-old-works.webp" alt="The Old Works"></span>
+        <span class="v09-info-copy">
+          <small>LEGACY INFRASTRUCTURE</small>
+          <strong>The Old Works</strong>
+          <span>Legacy infrastructure beneath the city and beyond clean system maps.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-info-card">
+      <button type="button" class="v09-info-open" data-v09-open-district="quiet" aria-label="Open dossier for The Quiet Estates">
+        <span class="v09-info-thumb" style="--thumb-pos:48% 22%;"><img loading="lazy" src="../../assets/images/mythos-the-quiet-estates.webp" alt="The Quiet Estates"></span>
+        <span class="v09-info-copy">
+          <small>PRIVATISED RESIDENTIAL</small>
+          <strong>The Quiet Estates</strong>
+          <span>Private enclaves where security, distance and privilege are designed in.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
     </div>
-    <p class="v09-mobile-note">On mobile, swipe horizontally through Nova Gauteng.</p>
   </div>
 </section>
 
 <section class="section v09-section v09-systems" id="systems">
-  <div class="container v09-systems-grid">
-    <figure class="v09-merit-card">
-      <img src="../../assets/images/mythos-merit.webp" alt="MERIT system interface dossier">
-      <figcaption><span>SYSTEM FILE</span><strong>MERIT</strong></figcaption>
-    </figure>
-    <div>
-      <div class="v09-section-head">
+  <div class="container">
+    <div class="v09-section-head v09-character-head">
+      <div>
         <span>FILE // 004</span>
         <h2>The systems beneath the city</h2>
+        <p>Version 0.9 treats infrastructure as a character. Rules arrive through interfaces, rankings, routes and permissions rather than a single obvious villain.</p>
       </div>
-      <p class="lead">Version 0.9 treats infrastructure as a character. Rules arrive through interfaces, rankings, routes and permissions rather than a single obvious villain.</p>
-      <div class="v09-system-list">
-        <article><strong>MERIT / Merit Systems</strong><p>The civic trust and routing architecture that coordinates access, movement and institutional order across Nova Gauteng.</p></article>
-        <article><strong>Nexus Grid Assurance</strong><p>An in-world institutional layer tied to the operation, assurance and control of the Grid.</p></article>
-        <article><strong>The legacy-routing patch</strong><p>Duma's illegal workaround temporarily misclassifies a user outside normal routing rules. It creates freedom in the moment—and a signal the system can learn to trace.</p></article>
-      </div>
+      <p class="v09-swipe-note">MERIT, Nexus and the patch can each open as their own dossier.</p>
+    </div>
+
+    <div class="v09-info-grid v09-system-grid" aria-label="Version 0.9 system dossiers">
+      <article class="v09-system-card">
+      <button type="button" class="v09-info-open" data-v09-open-system="merit" aria-label="Open dossier for MERIT / Merit Systems">
+        <span class="v09-info-thumb" style="--thumb-pos:50% 18%;"><img loading="lazy" src="../../assets/images/mythos-merit.webp" alt="MERIT / Merit Systems"></span>
+        <span class="v09-info-copy">
+          <small>CIVIC TRUST ARCHITECTURE</small>
+          <strong>MERIT / Merit Systems</strong>
+          <span>The routing and trust architecture that coordinates access, movement and order.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-system-card">
+      <button type="button" class="v09-info-open" data-v09-open-system="nexus" aria-label="Open dossier for Nexus Grid Assurance">
+        <span class="v09-info-thumb" style="--thumb-pos:60% 17%;"><img loading="lazy" src="../../assets/images/mythos-the-grid.webp" alt="Nexus Grid Assurance"></span>
+        <span class="v09-info-copy">
+          <small>OPERATIONAL ASSURANCE LAYER</small>
+          <strong>Nexus Grid Assurance</strong>
+          <span>The institutional layer that audits, tests and enforces what the Grid is supposed to be doing.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-system-card">
+      <button type="button" class="v09-info-open" data-v09-open-system="patch" aria-label="Open dossier for The legacy-routing patch">
+        <span class="v09-info-thumb" style="--thumb-pos:56% 18%;"><img loading="lazy" src="../../assets/images/mythos-the-old-works.webp" alt="The legacy-routing patch"></span>
+        <span class="v09-info-copy">
+          <small>ILLEGAL WORKAROUND</small>
+          <strong>The legacy-routing patch</strong>
+          <span>Duma's workaround temporarily misclassifies a user outside normal routing rules.</span>
+          <b>Open full dossier →</b>
+        </span>
+      </button>
+    </article>
     </div>
   </div>
 </section>
@@ -240,6 +320,7 @@
   </div>
 </section>
 </main>
+
 
 <dialog class="v09-person-dialog" data-v09-dialog aria-labelledby="v09-dialog-title">
   <button class="v09-dialog-close" type="button" data-v09-close aria-label="Close personnel dossier">×</button>
@@ -361,6 +442,125 @@
     </article>
   </div>
 </dialog>
+
+<dialog class="v09-person-dialog" data-v09-district-dialog aria-labelledby="v09-district-dialog-title">
+  <button class="v09-dialog-close" type="button" data-v09-district-close aria-label="Close district dossier">×</button>
+  <p class="sr-only" id="v09-district-dialog-title">Nova Gauteng district dossier</p>
+  <div class="v09-dialog-body">
+    <article class="v09-info-profile" data-v09-district-profile="crown" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-crown.webp" alt="The Crown dossier artwork">
+        <span>DISTRICT FILE // CROWN</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">NOVA GAUTENG DISTRICT FILE</span>
+        <h2>The Crown</h2>
+        <p class="v09-profile-role">EXECUTIVE CORE</p>
+        <dl class="v09-record-grid"><div><dt>District class</dt><dd>Premiere executive district</dd></div><div><dt>Access model</dt><dd>Board / executive controlled</dd></div><div><dt>Visual language</dt><dd>Bright, immaculate, elevated</dd></div><div><dt>Narrative use</dt><dd>Curated privilege and visible institutional promise</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The Crown is Nova Gauteng's most polished district: an executive enclave of towers, skybridges, sanitised transit and choreographed order. It represents the city as marketed from above—beautiful, efficient and deliberately insulated from the social frictions beneath it.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-district-profile="grid" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-grid.webp" alt="The Grid dossier artwork">
+        <span>DISTRICT FILE // GRID</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">NOVA GAUTENG DISTRICT FILE</span>
+        <h2>The Grid</h2>
+        <p class="v09-profile-role">OPERATIONAL BACKBONE</p>
+        <dl class="v09-record-grid"><div><dt>District class</dt><dd>Core operational district</dd></div><div><dt>Access model</dt><dd>Biometric gates and trust-tier routing</dd></div><div><dt>Visual language</dt><dd>Dense, wet, lit by screens and checkpoints</dd></div><div><dt>Narrative use</dt><dd>Where everyday compliance becomes visible</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The Grid is the city's managed heart: transit corridors, checkpoints, dashboards and public movement rendered legible to the system. It is where citizens feel MERIT most directly—not as a theory, but as the everyday architecture of permission.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-district-profile="fringe" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-fringe.webp" alt="The Fringe dossier artwork">
+        <span>DISTRICT FILE // FRINGE</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">NOVA GAUTENG DISTRICT FILE</span>
+        <h2>The Fringe</h2>
+        <p class="v09-profile-role">ADAPTIVE COMMUNITY</p>
+        <dl class="v09-record-grid"><div><dt>District class</dt><dd>Adaptive residential zone</dd></div><div><dt>Access model</dt><dd>Shared, informal, unstable</dd></div><div><dt>Visual language</dt><dd>Dense, warm, improvised, communal</dd></div><div><dt>Narrative use</dt><dd>Human resilience beyond clean system maps</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The Fringe is where formal control thins out and community ingenuity takes over. Shared water, patched routes, repair shops, improvised commerce and local knowledge keep life moving where the official system is inconsistent or absent.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-district-profile="oldworks" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-old-works.webp" alt="The Old Works dossier artwork">
+        <span>DISTRICT FILE // OLDWORKS</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">NOVA GAUTENG DISTRICT FILE</span>
+        <h2>The Old Works</h2>
+        <p class="v09-profile-role">LEGACY INFRASTRUCTURE</p>
+        <dl class="v09-record-grid"><div><dt>District class</dt><dd>Sub-surface maintenance layer</dd></div><div><dt>Access model</dt><dd>Restricted / off-grid</dd></div><div><dt>Visual language</dt><dd>Industrial, dark, mechanical, pre-polish</dd></div><div><dt>Narrative use</dt><dd>Where the city's memory survives beneath the interface</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The Old Works is the forgotten layer beneath Nova Gauteng: legacy tunnels, server rooms, workshops and maintenance routes that still quietly support the city. It is both material history and narrative pressure point—the place Duma understands best.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-district-profile="quiet" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-quiet-estates.webp" alt="The Quiet Estates dossier artwork">
+        <span>DISTRICT FILE // QUIET</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">NOVA GAUTENG DISTRICT FILE</span>
+        <h2>The Quiet Estates</h2>
+        <p class="v09-profile-role">PRIVATISED RESIDENTIAL</p>
+        <dl class="v09-record-grid"><div><dt>District class</dt><dd>Private residential enclave</dd></div><div><dt>Access model</dt><dd>Resident-only / gold-tier controlled</dd></div><div><dt>Visual language</dt><dd>Green, curated, walled, immaculate</dd></div><div><dt>Narrative use</dt><dd>Privilege hidden behind comfort and controlled peace</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The Quiet Estates are private, highly curated neighbourhoods built on exclusive infrastructure and constant monitoring. The promise here is tranquillity, but the tranquillity is itself a product of exclusion, distance and closed access.</p></div>
+      </div>
+    </article>
+  </div>
+</dialog>
+
+<dialog class="v09-person-dialog" data-v09-system-dialog aria-labelledby="v09-system-dialog-title">
+  <button class="v09-dialog-close" type="button" data-v09-system-close aria-label="Close system dossier">×</button>
+  <p class="sr-only" id="v09-system-dialog-title">Version 0.9 system dossier</p>
+  <div class="v09-dialog-body">
+    <article class="v09-info-profile" data-v09-system-profile="merit" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-merit.webp" alt="MERIT / Merit Systems dossier artwork">
+        <span>SYSTEM FILE // MERIT</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">SYSTEMS FILE</span>
+        <h2>MERIT / Merit Systems</h2>
+        <p class="v09-profile-role">CIVIC TRUST ARCHITECTURE</p>
+        <dl class="v09-record-grid"><div><dt>System class</dt><dd>Administrative AI platform</dd></div><div><dt>Domain</dt><dd>Nova Gauteng metro grid</dd></div><div><dt>Purpose</dt><dd>Optimise flow, access, trust and institutional order</dd></div><div><dt>Narrative use</dt><dd>Infrastructure as character</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>MERIT is not merely software. In Version 0.9 it functions like a governing nervous system: assigning trust, routing movement, controlling access and translating policy into lived consequences. It is the city's quiet protagonist-antagonist—everywhere present even when unseen.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-system-profile="nexus" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-grid.webp" alt="Nexus Grid Assurance dossier artwork">
+        <span>SYSTEM FILE // NEXUS</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">SYSTEMS FILE</span>
+        <h2>Nexus Grid Assurance</h2>
+        <p class="v09-profile-role">OPERATIONAL ASSURANCE LAYER</p>
+        <dl class="v09-record-grid"><div><dt>System class</dt><dd>Assurance / compliance division</dd></div><div><dt>Domain</dt><dd>Grid operations and identity enforcement</dd></div><div><dt>Purpose</dt><dd>Verification, audit, monitoring and corrective response</dd></div><div><dt>Narrative use</dt><dd>Where ambition meets institutional machinery</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Nexus Grid Assurance is the procedural layer that keeps the Grid legible to itself. It is where compliance, audit culture, testing and detection converge—making it the perfect environment for Kai, Senzo and the people who measure the system from within.</p></div>
+      </div>
+    </article>
+<article class="v09-info-profile" data-v09-system-profile="patch" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-the-old-works.webp" alt="The legacy-routing patch dossier artwork">
+        <span>SYSTEM FILE // PATCH</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">SYSTEMS FILE</span>
+        <h2>The legacy-routing patch</h2>
+        <p class="v09-profile-role">ILLEGAL WORKAROUND</p>
+        <dl class="v09-record-grid"><div><dt>Created by</dt><dd>Duma Vale</dd></div><div><dt>System class</dt><dd>Legacy routing exploit</dd></div><div><dt>Primary effect</dt><dd>Temporary misclassification / off-path movement</dd></div><div><dt>Narrative use</dt><dd>Freedom in the moment, signal in the aftermath</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>The patch is the story's catalytic object. Originally conceived as a quiet escape route, it allows a user to slip outside the city's ordinary routing logic for a brief moment. That freedom is real—but each use leaves evidence the system can learn to trace.</p></div>
+      </div>
+    </article>
+  </div>
+</dialog>
+
 
 <footer class="site-footer v09-footer">
   <div class="container footer-grid v09-footer-grid">
