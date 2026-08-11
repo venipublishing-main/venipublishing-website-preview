@@ -17,8 +17,8 @@
   <meta name="theme-color" content="#071113">
   <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="stylesheet" href="../../assets/css/site.css?v=1.6">
-  <script defer src="../../assets/js/site.js?v=1.4"></script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=1.6.1">
+  <script defer src="../../assets/js/site.js?v=1.6.1"></script>
 </head>
 <body class="theme-mythos version09" id="top">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -99,38 +99,88 @@
 
 <section class="section v09-section v09-dark" id="characters">
   <div class="container">
-    <div class="v09-section-head">
-      <span>FILE // 002</span>
-      <h2>Primary characters</h2>
-      <p>The central relationship is builder and tester—not a literal retelling, but a modern structural echo.</p>
+    <div class="v09-section-head v09-character-head">
+      <div>
+        <span>FILE // 002</span>
+        <h2>Personnel files</h2>
+        <p>The central relationship remains builder and tester, but Nova Gauteng is populated by people who interpret, administer, explain and quietly work around the same systems.</p>
+      </div>
+      <p class="v09-swipe-note">On mobile: swipe the personnel deck, then tap a character to open the full dossier.</p>
     </div>
 
-    <div class="v09-character-grid">
-      <article class="v09-character-card">
-        <img src="../../assets/images/mythos-duma-vale.webp" alt="Duma Vale character dossier">
-        <div>
-          <span class="v09-label">OLDER BUILDER // FORMER INFRASTRUCTURE ARCHITECT</span>
-          <h3>Duma Vale</h3>
-          <p>Brilliant, tired and morally burdened. Duma helped create MERIT's routing logic and understands the system at a level most users never will. He wants a quiet way out, not recognition, and treats every shortcut as a risk calculation.</p>
-          <dl><div><dt>Function</dt><dd>Builder · warning voice · reluctant architect of escape</dd></div><div><dt>Pressure point</dt><dd>Knowing exactly what the system can do because he helped make it possible.</dd></div></dl>
-        </div>
-      </article>
-
-      <article class="v09-character-card">
-        <img src="../../assets/images/mythos-kai-maseko.webp" alt="Kai Maseko character dossier">
-        <div>
-          <span class="v09-label">YOUNG TESTER // JUNIOR COMPLIANCE</span>
-          <h3>Kai Maseko</h3>
-          <p>Clever, ambitious and close enough to the Grid to understand its rules without yet fearing them. Kai sees Duma's workaround not merely as an exit but as leverage—a way to move upward through a city built on controlled access.</p>
-          <dl><div><dt>Function</dt><dd>Tester · climber · source of acceleration</dd></div><div><dt>Pressure point</dt><dd>The belief that understanding the limits means he can control the consequences.</dd></div></dl>
-        </div>
-      </article>
-    </div>
-
-    <div class="v09-supporting">
-      <article><span>COLLEAGUE // OBSERVER</span><h3>Senzo “Sen” Jacobs</h3><p>Kai's grounded, funny and practical colleague. He notices Kai changing before Kai does and keeps the story connected to ordinary social consequences.</p></article>
-      <article><span>MANAGEMENT // PROCESS</span><h3>Pieter Brand</h3><p>A dashboard loyalist who trusts institutional metrics and translates harsh outcomes into the language of process, compliance and fairness.</p></article>
-      <article><span>COMMUNICATIONS // CULTURE</span><h3>Mara Naidoo</h3><p>Polished, warm and relentlessly positive. Mara turns MERIT's controls into reassuring institutional language and public-facing normality.</p></article>
+    <div class="v09-personnel-grid" aria-label="Version 0.9 character dossiers">
+      <article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="duma" aria-label="Open personnel dossier for Duma Vale">
+        <span class="v09-person-image"><img src="../../assets/images/mythos-duma-vale.webp" alt="Duma Vale"></span>
+        <span class="v09-person-copy">
+          <small>SYSTEMS BUILDER // OLD WORKS</small>
+          <strong>Duma Vale</strong>
+          <em>Former Infrastructure Architect</em>
+          <span>The builder who understands MERIT well enough to know where it can fail.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="kai" aria-label="Open personnel dossier for Kai Maseko">
+        <span class="v09-person-image"><img src="../../assets/images/mythos-kai-maseko.webp" alt="Kai Maseko"></span>
+        <span class="v09-person-copy">
+          <small>NEXUS GRID ASSURANCE // THE GRID</small>
+          <strong>Kai Maseko</strong>
+          <em>Junior Compliance Tester</em>
+          <span>Young, sharp and ambitious enough to see a ladder where Duma built an exit.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="senzo" aria-label="Open personnel dossier for Senzo “Sen” Jacobs">
+        <span class="v09-person-image"><img src="../../assets/images/v09-senzo-jacobs.webp" alt="Senzo “Sen” Jacobs"></span>
+        <span class="v09-person-copy">
+          <small>COLLEAGUE // OBSERVER</small>
+          <strong>Senzo “Sen” Jacobs</strong>
+          <em>Systems Analyst</em>
+          <span>A dry-humoured analyst who notices patterns other people would rather ignore.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="pieter" aria-label="Open personnel dossier for Pieter Brand">
+        <span class="v09-person-image"><img src="../../assets/images/v09-pieter-brand.webp" alt="Pieter Brand"></span>
+        <span class="v09-person-copy">
+          <small>MIDDLE MANAGER // DASHBOARD LOYALIST</small>
+          <strong>Pieter Brand</strong>
+          <em>Operations Performance Manager</em>
+          <span>If the dashboard says the system works, Pieter believes the problem is probably you.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="mara" aria-label="Open personnel dossier for Mara Naidoo">
+        <span class="v09-person-image"><img src="../../assets/images/v09-mara-naidoo.webp" alt="Mara Naidoo"></span>
+        <span class="v09-person-copy">
+          <small>PUBLIC VOICE // SYSTEM TRUST</small>
+          <strong>Mara Naidoo</strong>
+          <em>Communications & Culture Officer</em>
+          <span>The polished institutional voice that turns control into reassurance.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
+<article class="v09-person-card">
+      <button type="button" class="v09-person-open" data-v09-open="bongi" aria-label="Open personnel dossier for Aunty Bongi">
+        <span class="v09-person-image"><img src="../../assets/images/v09-aunty-bongi.webp" alt="Aunty Bongi"></span>
+        <span class="v09-person-copy">
+          <small>SECURITY DESK // INFORMAL INTELLIGENCE</small>
+          <strong>Aunty Bongi</strong>
+          <em>Security Desk Officer</em>
+          <span>Low clearance, long memory: the kind of person every functioning building actually depends on.</span>
+          <b>Open personnel file →</b>
+        </span>
+      </button>
+    </article>
     </div>
   </div>
 </section>
@@ -190,6 +240,127 @@
   </div>
 </section>
 </main>
+
+<dialog class="v09-person-dialog" data-v09-dialog aria-labelledby="v09-dialog-title">
+  <button class="v09-dialog-close" type="button" data-v09-close aria-label="Close personnel dossier">×</button>
+  <p class="sr-only" id="v09-dialog-title">Version 0.9 personnel dossier</p>
+  <div class="v09-dialog-body">
+    <article class="v09-person-profile" data-v09-profile="duma" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-duma-vale.webp" alt="Duma Vale dossier artwork">
+        <span>PERSONNEL RECORD // DUMA</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Duma Vale</h2>
+        <p class="v09-profile-role">Former Infrastructure Architect</p>
+        <dl class="v09-record-grid"><div><dt>Age</dt><dd>59</dd></div><div><dt>Clearance</dt><dd>Level 4 · revoked</dd></div><div><dt>Affiliation</dt><dd>Former MERIT Systems · Infrastructure Division</dd></div><div><dt>Status</dt><dd>Off-grid · unmonitored</dd></div><div><dt>Operating zone</dt><dd>The Old Works</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Duma helped design the core routing logic that connects Nova Gauteng's AI governance system to its physical infrastructure. Grounded, practical and morally burdened, he later builds the illegal legacy-routing patch that becomes Version 0.9—not to gain power, but to create a quiet way out.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Builder · warning voice · reluctant architect of escape</p></div>
+          <div><h3>Known for</h3><p>Routing logic, redundancy, failover protocols, city infrastructure and systems ethics.</p></div>
+          <div><h3>Core tension</h3><p>He knows exactly how dangerous the workaround is because he helped build the system it exploits.</p></div>
+          <div><h3>Known connections</h3><p>Kai Maseko · MERIT · The Old Works</p></div>
+        </div>
+      </div>
+    </article>
+<article class="v09-person-profile" data-v09-profile="kai" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/mythos-kai-maseko.webp" alt="Kai Maseko dossier artwork">
+        <span>PERSONNEL RECORD // KAI</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Kai Maseko</h2>
+        <p class="v09-profile-role">Junior Compliance Tester</p>
+        <dl class="v09-record-grid"><div><dt>Age</dt><dd>22</dd></div><div><dt>Clearance</dt><dd>Level 1.3 · limited</dd></div><div><dt>Affiliation</dt><dd>Nexus Grid Assurance</dd></div><div><dt>Status</dt><dd>On-grid</dd></div><div><dt>Operating zone</dt><dd>The Grid</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Kai is a young compliance tester inside Nova Gauteng's productivity infrastructure: clever, under-recognised, restless and resourceful. He discovers that Duma's workaround can do more than open doors. It can bend rankings, routes and opportunity—and he is far more willing to test those limits.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Tester · climber · source of acceleration</p></div>
+          <div><h3>Known for</h3><p>Compliance testing, timing, improvisation and learning the edges of institutional rules.</p></div>
+          <div><h3>Core tension</h3><p>He mistakes understanding the system's limits for being able to control the consequences of crossing them.</p></div>
+          <div><h3>Known connections</h3><p>Duma Vale · Nexus Grid Assurance · MERIT</p></div>
+        </div>
+      </div>
+    </article>
+<article class="v09-person-profile" data-v09-profile="senzo" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/v09-senzo-jacobs.webp" alt="Senzo “Sen” Jacobs dossier artwork">
+        <span>PERSONNEL RECORD // SENZO</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Senzo “Sen” Jacobs</h2>
+        <p class="v09-profile-role">Systems Analyst</p>
+        <dl class="v09-record-grid"><div><dt>Age</dt><dd>27</dd></div><div><dt>Clearance</dt><dd>Level 1.2</dd></div><div><dt>Affiliation</dt><dd>Nexus Grid Assurance</dd></div><div><dt>Speciality</dt><dd>Pattern recognition · anomaly detection · data forensics</dd></div><div><dt>Operating zone</dt><dd>The Grid</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Sen works close enough to the system to understand its data and close enough to ordinary workers to recognise when the official explanation does not match lived reality. His dossier marks him as a systems analyst with a sharp mind, dry humour and a low tolerance for nonsense.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Colleague · observer · pattern spotter</p></div>
+          <div><h3>Known for</h3><p>Spotting what others miss and asking the questions no one wants to hear.</p></div>
+          <div><h3>Core tension</h3><p>He can recognise a pattern before he has enough authority—or evidence—to prove what it means.</p></div>
+          <div><h3>Known connections</h3><p>Kai Maseko · Nexus Grid Assurance · The Grid</p></div>
+        </div>
+      </div>
+    </article>
+<article class="v09-person-profile" data-v09-profile="pieter" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/v09-pieter-brand.webp" alt="Pieter Brand dossier artwork">
+        <span>PERSONNEL RECORD // PIETER</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Pieter Brand</h2>
+        <p class="v09-profile-role">Operations Performance Manager</p>
+        <dl class="v09-record-grid"><div><dt>Age</dt><dd>38</dd></div><div><dt>Clearance</dt><dd>Level 2.1</dd></div><div><dt>Affiliation</dt><dd>MERIT Systems</dd></div><div><dt>Division</dt><dd>Grid Assurance Operations</dd></div><div><dt>Status</dt><dd>On-grid · compliant</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Pieter is an operations performance manager built for a world of KPIs, rankings and compliance dashboards. He reduces complicated human problems into measurable system outputs and trusts institutional metrics because, to him, measurement is what makes management possible.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Management · process · institutional normality</p></div>
+          <div><h3>Known for</h3><p>Turning complex problems into simple charts and escalating without hesitation.</p></div>
+          <div><h3>Core tension</h3><p>A system can remain legible on his dashboard even while becoming intolerable to the people living inside it.</p></div>
+          <div><h3>Known connections</h3><p>Kai Maseko · MERIT Systems · Grid Assurance Operations</p></div>
+        </div>
+      </div>
+    </article>
+<article class="v09-person-profile" data-v09-profile="mara" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/v09-mara-naidoo.webp" alt="Mara Naidoo dossier artwork">
+        <span>PERSONNEL RECORD // MARA</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Mara Naidoo</h2>
+        <p class="v09-profile-role">Communications & Culture Officer</p>
+        <dl class="v09-record-grid"><div><dt>Age</dt><dd>37</dd></div><div><dt>Clearance</dt><dd>Level 4.1 · executive</dd></div><div><dt>Affiliation</dt><dd>MERIT Systems · Executive Office</dd></div><div><dt>Mandate</dt><dd>Public narrative architecture · stakeholder trust · cultural strategy</dd></div><div><dt>Operating zone</dt><dd>Nova Gauteng</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Mara shapes how MERIT is understood rather than how it technically operates. Her executive communications role centres public narrative, stakeholder trust and cultural strategy, translating system pressure into language that feels calm, necessary and socially responsible.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Communications · culture · narrative control</p></div>
+          <div><h3>Known for</h3><p>Strategic communications, brand management, public engagement and crisis narrative control.</p></div>
+          <div><h3>Core tension</h3><p>The better she makes institutional control sound, the harder it becomes to separate reassurance from compliance.</p></div>
+          <div><h3>Known connections</h3><p>MERIT Systems · Executive Office · Nova Gauteng public narrative</p></div>
+        </div>
+      </div>
+    </article>
+<article class="v09-person-profile" data-v09-profile="bongi" hidden>
+      <div class="v09-profile-image">
+        <img src="../../assets/images/v09-aunty-bongi.webp" alt="Aunty Bongi dossier artwork">
+        <span>PERSONNEL RECORD // BONGI</span>
+      </div>
+      <div class="v09-profile-content">
+        <span class="v09-profile-kicker">MERIT / NEXUS PERSONNEL FILE</span>
+        <h2>Aunty Bongi</h2>
+        <p class="v09-profile-role">Security Desk Officer</p>
+        <dl class="v09-record-grid"><div><dt>Identity record</dt><dd>B. Dlamini</dd></div><div><dt>Age</dt><dd>60 · give or take</dd></div><div><dt>Clearance</dt><dd>Level 1.1 · internal</dd></div><div><dt>Affiliation</dt><dd>MERIT Systems · Building Services</dd></div><div><dt>Shift</dt><dd>06:00–14:00 · Mon–Fri</dd></div></dl>
+        <div class="v09-profile-block"><h3>Profile</h3><p>Aunty Bongi occupies a position the system considers ordinary and the building cannot function without. Her formal role is security desk officer; her real value is informal intelligence accumulated through years of people, routines, radios, sign-in books and things that never quite make it into MERIT's databases.</p></div>
+        <div class="v09-profile-two">
+          <div><h3>Story function</h3><p>Security desk · informal intelligence · human memory</p></div>
+          <div><h3>Known for</h3><p>Knowing everyone, knowing everything, and keeping the building—and its secrets—running.</p></div>
+          <div><h3>Core tension</h3><p>MERIT can record movement at scale; Aunty Bongi understands the meaning of the movement it records.</p></div>
+          <div><h3>Known connections</h3><p>The Grid · MERIT Building Services · the people who pass her desk</p></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</dialog>
 
 <footer class="site-footer v09-footer">
   <div class="container footer-grid v09-footer-grid">

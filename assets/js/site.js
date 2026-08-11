@@ -163,4 +163,49 @@
     });
   }
 
+
+
+  const v09Dialog = document.querySelector('[data-v09-dialog]');
+  if (v09Dialog) {
+    const v09Profiles = Array.from(v09Dialog.querySelectorAll('[data-v09-profile]'));
+    const v09Close = v09Dialog.querySelector('[data-v09-close]');
+    let v09LastTrigger = null;
+
+    document.querySelectorAll('[data-v09-open]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute('data-v09-open');
+        const target = v09Profiles.find((profile) => profile.getAttribute('data-v09-profile') === key);
+        if (!target) return;
+
+        v09Profiles.forEach((profile) => {
+          profile.hidden = profile !== target;
+        });
+
+        v09LastTrigger = button;
+        if (typeof v09Dialog.showModal === 'function') {
+          v09Dialog.showModal();
+        } else {
+          v09Dialog.setAttribute('open', '');
+        }
+        v09Close?.focus();
+      });
+    });
+
+    const closeV09Dialog = () => {
+      if (typeof v09Dialog.close === 'function') v09Dialog.close();
+      else v09Dialog.removeAttribute('open');
+      v09LastTrigger?.focus();
+    };
+
+    v09Close?.addEventListener('click', closeV09Dialog);
+
+    v09Dialog.addEventListener('click', (event) => {
+      if (event.target === v09Dialog) closeV09Dialog();
+    });
+
+    v09Dialog.addEventListener('close', () => {
+      v09Profiles.forEach((profile) => profile.hidden = true);
+    });
+  }
+
 })();

@@ -1352,3 +1352,127 @@ summary{cursor:pointer;font-weight:900}
   .v09-hero-dossier figcaption{left:-.4rem;right:.5rem;min-width:0}
   .mythos-footer-grid,.v09-footer-grid{grid-template-columns:1fr}
 }
+
+
+/* v1.6.1 — Version 0.9 interactive personnel dossiers */
+.v09-character-head{display:flex;justify-content:space-between;gap:2rem;align-items:end}
+.v09-character-head>div{max-width:760px}
+.v09-swipe-note{margin:0;max-width:270px;text-align:right;color:#698884;font-size:.7rem;line-height:1.5}
+
+.v09-personnel-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+}
+.v09-person-card{
+  background:#071012;border:1px solid #294447;overflow:hidden;
+  box-shadow:0 14px 34px rgba(0,0,0,.22)
+}
+.v09-person-open{
+  display:block;width:100%;height:100%;padding:0;border:0;background:transparent;color:inherit;
+  text-align:left;cursor:pointer
+}
+.v09-person-image{
+  display:block;height:315px;overflow:hidden;background:#050b0c;border-bottom:1px solid #294447
+}
+.v09-person-image img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%;
+  transition:transform .28s ease,filter .28s ease
+}
+.v09-person-copy{display:flex;flex-direction:column;min-height:210px;padding:1rem 1.05rem}
+.v09-person-copy small{
+  color:#5fa5a2;font-size:.56rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase
+}
+.v09-person-copy strong{
+  margin:.35rem 0 .1rem;color:#e5ece8;font-family:Georgia,"Times New Roman",serif;
+  font-size:1.55rem;font-weight:500
+}
+.v09-person-copy em{
+  color:#c99654;font-size:.68rem;font-style:normal;font-weight:900;text-transform:uppercase;letter-spacing:.07em
+}
+.v09-person-copy>span{
+  margin-top:.65rem;color:#8fa29e;font-size:.78rem;line-height:1.5
+}
+.v09-person-copy b{
+  margin-top:auto;padding-top:.8rem;color:#67c5c2;font-size:.61rem;text-transform:uppercase;letter-spacing:.1em
+}
+.v09-person-open:hover .v09-person-image img,
+.v09-person-open:focus-visible .v09-person-image img{transform:scale(1.035);filter:brightness(1.08)}
+.v09-person-open:focus-visible{outline:3px solid #67c5c2;outline-offset:-3px}
+
+.v09-person-dialog{
+  width:min(1040px,calc(100vw - 2rem));
+  max-height:min(90vh,960px);
+  padding:0;border:1px solid #34575a;border-radius:.25rem;
+  background:#071113;color:#dbe3df;
+  box-shadow:0 32px 90px rgba(0,0,0,.62)
+}
+.v09-person-dialog::backdrop{background:rgba(2,8,9,.84);backdrop-filter:blur(4px)}
+.v09-dialog-close{
+  position:sticky;top:.7rem;float:right;z-index:10;margin:.7rem .7rem 0 0;
+  width:43px;height:43px;border:1px solid #4c7878;background:#0d1c1e;color:#dce9e5;
+  font-size:1.45rem;cursor:pointer
+}
+.v09-dialog-close:hover,.v09-dialog-close:focus-visible{background:#67c5c2;color:#071113;outline:none}
+.v09-dialog-body{padding:1.3rem}
+.v09-person-profile{
+  display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+  gap:1.35rem;clear:both
+}
+.v09-person-profile[hidden]{display:none}
+.v09-profile-image{
+  position:relative;align-self:start;border:1px solid #2c484b;background:#050b0c;padding:.35rem
+}
+.v09-profile-image img{display:block;width:100%;height:auto}
+.v09-profile-image>span{
+  display:block;padding:.55rem .45rem .25rem;color:#5f8f8d;font-size:.54rem;font-weight:900;
+  letter-spacing:.12em;text-transform:uppercase
+}
+.v09-profile-content{padding:.4rem .5rem 1rem 0}
+.v09-profile-kicker{
+  color:#63b6b3;font-size:.58rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em
+}
+.v09-profile-content h2{
+  margin:.25rem 0 .1rem;color:#edf1ed;font-size:clamp(2.3rem,5vw,4.2rem);line-height:.95
+}
+.v09-profile-role{
+  margin:.25rem 0 1rem;color:#ca9b5a;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.09em
+}
+.v09-record-grid{
+  display:grid;grid-template-columns:1fr 1fr;margin:0 0 1rem;border:1px solid #274346;background:#274346;gap:1px
+}
+.v09-record-grid>div{background:#0a1618;padding:.7rem .8rem}
+.v09-record-grid dt{
+  color:#588e8c;font-size:.52rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em
+}
+.v09-record-grid dd{margin:.2rem 0 0;color:#c2ceca;font-size:.76rem;line-height:1.35}
+.v09-profile-block{padding:1rem 0;border-top:1px solid #284548}
+.v09-profile-block h3,.v09-profile-two h3{
+  margin:0 0 .3rem;color:#6cc4c1;font-size:.6rem;text-transform:uppercase;letter-spacing:.11em
+}
+.v09-profile-block p,.v09-profile-two p{margin:0;color:#9eaeaa;font-size:.82rem;line-height:1.58}
+.v09-profile-two{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#274346;border:1px solid #274346
+}
+.v09-profile-two>div{background:#0a1618;padding:.8rem}
+
+@media(max-width:900px){
+  .v09-character-head{align-items:start}
+  .v09-personnel-grid{
+    display:flex;overflow-x:auto;gap:.85rem;padding:.15rem .2rem 1rem;
+    scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin
+  }
+  .v09-person-card{flex:0 0 min(76vw,335px);scroll-snap-align:center}
+  .v09-swipe-note{text-align:left;max-width:none}
+  .v09-person-profile{grid-template-columns:260px 1fr}
+}
+@media(max-width:700px){
+  .v09-character-head{display:block}
+  .v09-swipe-note{margin-top:.5rem}
+  .v09-person-dialog{width:calc(100vw - .7rem);max-height:94vh}
+  .v09-dialog-body{padding:.75rem}
+  .v09-person-profile{grid-template-columns:1fr}
+  .v09-profile-image{max-width:390px;margin:0 auto}
+  .v09-profile-content{padding:.3rem .3rem .8rem}
+  .v09-record-grid,.v09-profile-two{grid-template-columns:1fr}
+}
