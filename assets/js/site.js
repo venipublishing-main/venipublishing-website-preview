@@ -208,5 +208,66 @@
     });
   }
 
-\n\n  const bindV09Dialog = (options) => {\n    const dialog = document.querySelector(options.dialogSelector);\n    if (!dialog) return;\n\n    const profiles = Array.from(dialog.querySelectorAll(options.profileSelector));\n    const closeButton = dialog.querySelector(options.closeSelector);\n    let lastTrigger = null;\n\n    document.querySelectorAll(options.triggerSelector).forEach((button) => {\n      button.addEventListener('click', () => {\n        const key = button.getAttribute(options.triggerAttribute);\n        const target = profiles.find((profile) => profile.getAttribute(options.profileAttribute) === key);\n        if (!target) return;\n\n        profiles.forEach((profile) => {\n          profile.hidden = profile !== target;\n        });\n\n        lastTrigger = button;\n        if (typeof dialog.showModal === 'function') dialog.showModal();\n        else dialog.setAttribute('open', '');\n        closeButton?.focus();\n      });\n    });\n\n    const closeDialog = () => {\n      if (typeof dialog.close === 'function') dialog.close();\n      else dialog.removeAttribute('open');\n      lastTrigger?.focus();\n    };\n\n    closeButton?.addEventListener('click', closeDialog);\n    dialog.addEventListener('click', (event) => {\n      if (event.target === dialog) closeDialog();\n    });\n    dialog.addEventListener('close', () => {\n      profiles.forEach((profile) => {\n        profile.hidden = true;\n      });\n    });\n  };\n\n  bindV09Dialog({\n    dialogSelector: '[data-v09-district-dialog]',\n    triggerSelector: '[data-v09-open-district]',\n    triggerAttribute: 'data-v09-open-district',\n    profileSelector: '[data-v09-district-profile]',\n    profileAttribute: 'data-v09-district-profile',\n    closeSelector: '[data-v09-district-close]'\n  });\n\n  bindV09Dialog({\n    dialogSelector: '[data-v09-system-dialog]',\n    triggerSelector: '[data-v09-open-system]',\n    triggerAttribute: 'data-v09-open-system',\n    profileSelector: '[data-v09-system-profile]',\n    profileAttribute: 'data-v09-system-profile',\n    closeSelector: '[data-v09-system-close]'\n  });\n
+
+
+  const bindV09Dialog = (options) => {
+    const dialog = document.querySelector(options.dialogSelector);
+    if (!dialog) return;
+
+    const profiles = Array.from(dialog.querySelectorAll(options.profileSelector));
+    const closeButton = dialog.querySelector(options.closeSelector);
+    let lastTrigger = null;
+
+    document.querySelectorAll(options.triggerSelector).forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute(options.triggerAttribute);
+        const target = profiles.find((profile) => profile.getAttribute(options.profileAttribute) === key);
+        if (!target) return;
+
+        profiles.forEach((profile) => {
+          profile.hidden = profile !== target;
+        });
+
+        lastTrigger = button;
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+        else dialog.setAttribute('open', '');
+        closeButton?.focus();
+      });
+    });
+
+    const closeDialog = () => {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+      lastTrigger?.focus();
+    };
+
+    closeButton?.addEventListener('click', closeDialog);
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) closeDialog();
+    });
+    dialog.addEventListener('close', () => {
+      profiles.forEach((profile) => {
+        profile.hidden = true;
+      });
+    });
+  };
+
+  bindV09Dialog({
+    dialogSelector: '[data-v09-district-dialog]',
+    triggerSelector: '[data-v09-open-district]',
+    triggerAttribute: 'data-v09-open-district',
+    profileSelector: '[data-v09-district-profile]',
+    profileAttribute: 'data-v09-district-profile',
+    closeSelector: '[data-v09-district-close]'
+  });
+
+  bindV09Dialog({
+    dialogSelector: '[data-v09-system-dialog]',
+    triggerSelector: '[data-v09-open-system]',
+    triggerAttribute: 'data-v09-open-system',
+    profileSelector: '[data-v09-system-profile]',
+    profileAttribute: 'data-v09-system-profile',
+    closeSelector: '[data-v09-system-close]'
+  });
+
 })();
