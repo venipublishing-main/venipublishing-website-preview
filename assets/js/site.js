@@ -270,4 +270,80 @@
     closeSelector: '[data-v09-system-close]'
   });
 
+
+
+  // Manual media carousels used by AI Geopolitic and Veni Faithful.
+  document.querySelectorAll('[data-media-carousel]').forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('[data-media-slide]'));
+    const prev = carousel.querySelector('[data-media-prev]');
+    const next = carousel.querySelector('[data-media-next]');
+    const status = carousel.querySelector('[data-media-status]');
+    const indexWrap = carousel.querySelector('[data-media-index]');
+    if (!slides.length || !prev || !next) return;
+
+    let index = 0;
+    let touchStartX = null;
+    const indexButtons = [];
+
+    const render = (newIndex, moveFocus = false) => {
+      index = (newIndex + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === index;
+        slide.hidden = !active;
+        slide.setAttribute('aria-hidden', String(!active));
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-label', `${i + 1} of ${slides.length}`);
+      });
+      if (status) status.textContent = `${index + 1} / ${slides.length}`;
+      indexButtons.forEach((button, i) => {
+        button.setAttribute('aria-current', String(i === index));
+      });
+      if (moveFocus) {
+        slides[index]?.focus?.({ preventScroll: true });
+      }
+    };
+
+    slides.forEach((slide) => slide.setAttribute('tabindex', '-1'));
+
+    if (indexWrap) {
+      slides.forEach((_, i) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'media-carousel-index-button';
+        button.textContent = String(i + 1);
+        button.setAttribute('aria-label', `Show item ${i + 1} of ${slides.length}`);
+        button.addEventListener('click', () => render(i));
+        indexWrap.appendChild(button);
+        indexButtons.push(button);
+      });
+    }
+
+    prev.addEventListener('click', () => render(index - 1));
+    next.addEventListener('click', () => render(index + 1));
+
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        render(index - 1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        render(index + 1);
+      }
+    });
+
+    carousel.addEventListener('touchstart', (event) => {
+      touchStartX = event.changedTouches[0]?.clientX ?? null;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (event) => {
+      if (touchStartX === null) return;
+      const endX = event.changedTouches[0]?.clientX ?? touchStartX;
+      const delta = endX - touchStartX;
+      if (Math.abs(delta) > 50) render(index + (delta < 0 ? 1 : -1));
+      touchStartX = null;
+    }, { passive: true });
+
+    render(0);
+  });
+
 })();
