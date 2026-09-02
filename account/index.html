@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Veni Account | Architecture preview</title>
+  <meta name="description" content="Preview of the planned Veni Account architecture for libraries, purchases, memberships and selected interactive Veni Publishing services.">
+  <meta name="theme-color" content="#0e2f2b">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml"><link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/site.css?v=1.9"><link rel="stylesheet" href="../assets/css/v2.css?v=2.0">
+  <script defer src="../assets/js/site.js?v=1.9"></script>
+</head>
+<body class="parent-v20">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header parent-v18-header">
+  <div class="container nav">
+    <a class="brand" href="../" aria-label="Veni Publishing home"><img src="../assets/images/veni-crest.svg" alt=""><span class="brand-copy"><strong>VENI PUBLISHING</strong><small>Truth · Purpose · Legacy</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="../">Home</a><a href="../platforms/">Platforms</a><a href="../releases/">Releases</a><a href="../about/">About</a><a class="nav-account" href="../account/" aria-current="page">Veni Account</a><a class="nav-cta" href="../contact/">Contact &amp; collaborate</a></nav>
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu hidden><div class="container"><a href="../">Home</a><a href="../platforms/">Platforms</a><a href="../releases/">Releases</a><a href="../about/">About</a><a href="../account/" aria-current="page">Veni Account — planned</a><a href="../contact/">Contact</a></div></nav>
+</header>
+
+<main id="main">
+<section class="account-hero"><div class="container hero-inner">
+  <div class="hero-copy">
+    <span class="account-status">Architecture preview · not live</span>
+    <h1>One Veni identity.<br>Separate platform experiences.</h1>
+    <p class="lead">Veni Account is the planned adult-directed identity and entitlement layer for digital purchases, memberships and selected interactive services. No customer accounts or payments are active in this preview.</p>
+    <div class="actions"><a class="btn btn-bronze" href="#principles">See the design principles</a><a class="btn btn-secondary" href="../arcana/">See the Arcana pilot concept</a></div>
+  </div>
+  <div class="account-shell" aria-label="Conceptual Veni Account dashboard">
+    <div class="account-shell-nav"><strong>Veni Account</strong><span>My Library</span><span>Arcana</span><span>Mythos</span><span>Memberships</span><span>Orders</span><span>Settings</span></div>
+    <div class="account-shell-main"><h3>My Library</h3><p>Concept preview only.</p><div class="account-library-demo"><div><strong>Version 0.9</strong><span>Future digital access</span></div><div><strong>Arcana</strong><span>Saved readings &amp; guidebooks</span></div><div><strong>Veni Kids</strong><span>Adult purchases / downloads</span></div></div></div>
+  </div>
+</div></section>
+
+<section class="section section-paper" id="principles"><div class="container">
+  <div class="section-head"><div><span class="eyebrow">Design principles</span><h2>Shared identity should remove friction—not erase boundaries.</h2><p>The account system is being designed around the actual needs of each platform.</p></div></div>
+  <div class="account-principles">
+    <article class="account-principle"><h3>No universal Veni wallet</h3><p>Arcana may eventually use its own usage credits, Mythos may use purchases or memberships, and BUZA keeps its own specialised financial logic.</p></article>
+    <article class="account-principle"><h3>Entitlements over hidden links</h3><p>Paid digital access must be checked by a trusted backend. Premium files should never be protected only by JavaScript or obscure URLs.</p></article>
+    <article class="account-principle"><h3>Privacy by platform</h3><p>Tarot history, comic reading progress and tutoring data have different sensitivity and should not be flattened into one database model.</p></article>
+  </div>
+</div></section>
+
+<section class="section future-layer"><div class="container">
+  <span class="eyebrow">Proposed rollout</span><h2>Build the account layer only after the public website is stable.</h2><p class="lead">The preview reserves the navigation and product architecture now. Authentication and money come later, in controlled stages.</p>
+  <div class="roadmap-grid">
+    <article class="roadmap-step"><span>STAGE 1</span><strong>Public website v2</strong><p>Six platforms, Arcana placeholder and future-account-compatible structure.</p></article>
+    <article class="roadmap-step"><span>STAGE 2</span><strong>Account foundation</strong><p>Authentication, profile, library and entitlement model—without payments first.</p></article>
+    <article class="roadmap-step"><span>STAGE 3</span><strong>Arcana pilot</strong><p>Free card draw, saved readings and journal to test private user data safely.</p></article>
+    <article class="roadmap-step"><span>STAGE 4</span><strong>Commerce &amp; Mythos</strong><p>Payment verification, premium Arcana options and protected Mythos access.</p></article>
+  </div>
+</div></section>
+
+<section class="section section-paper"><div class="container parent-v18-two-col">
+  <div><span class="eyebrow">Important boundaries</span><h2>Not every Veni audience should be pushed toward an account.</h2><p class="lead">The account layer is adult-directed and optional where it does not improve the experience.</p></div>
+  <div class="parent-v18-stack">
+    <article><span>01</span><div><strong>Veni Kids</strong><p>The child-facing website remains browsable without registration. Any account route from Kids should be clearly for a parent or educator.</p></div></article>
+    <article><span>02</span><div><strong>BUZA</strong><p>BUZA may reuse identity infrastructure later, but parent, learner and tutor roles require a separate safeguarding and permissions model.</p></div></article>
+    <article><span>03</span><div><strong>Arcana &amp; Mythos</strong><p>These are the best early candidates for saved personal history, digital entitlements and optional paid access.</p></div></article>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-footer parent-v18-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="../assets/images/veni-crest.svg" alt=""><p>Veni Publishing</p><span>Independent South African publishing, media and education.</span></div>
+    <div class="footer-col"><h3>Platforms</h3><a href="../kids/">Veni Kids</a><a href="../ai-geopolitic/">AI Geopolitic</a><a href="../faithful/">Veni Faithful</a><a href="../mythos/">Veni Mythos</a><a href="../arcana/">Veni Arcana</a><a href="../buza/">BUZA</a></div>
+    <div class="footer-col"><h3>Publishing house</h3><a href="../platforms/">Platforms</a><a href="../releases/">Releases</a><a href="../about/">About</a><a href="../account/">Veni Account</a><a href="../contact/">Contact</a></div>
+    <div class="footer-col"><h3>Legal</h3><a href="../privacy/">Privacy</a><a href="../terms/">Terms of use</a></div>
+    <div class="footer-col"><h3>Status</h3><span>Architecture preview only</span><span>No login or payments active</span></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 Veni Publishing. All rights reserved.</span><span>Independent publishing · Pretoria, South Africa</span></div>
+</footer>
+</body></html>

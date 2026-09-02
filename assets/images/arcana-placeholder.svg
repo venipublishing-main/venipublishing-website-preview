@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="t d">
+  <title id="t">Veni Arcana visual placeholder</title>
+  <desc id="d">A provisional dark indigo and antique-gold emblem for the Veni Arcana website preview.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#2a2940"/>
+      <stop offset="1" stop-color="#11111b"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <g fill="none" stroke="#c69a4b" opacity=".82">
+    <circle cx="450" cy="250" r="154" stroke-width="3"/>
+    <circle cx="450" cy="250" r="116" stroke-width="1.5" opacity=".55"/>
+    <path d="M450 70v360M270 250h360M323 123l254 254M577 123L323 377" stroke-width="1.4" opacity=".45"/>
+    <path d="M450 102l31 111 111 37-111 37-31 111-31-111-111-37 111-37z" stroke-width="3"/>
+  </g>
+  <circle cx="450" cy="250" r="19" fill="#c69a4b"/>
+  <text x="450" y="475" fill="#efe4cf" text-anchor="middle" font-family="Georgia, serif" font-size="54" letter-spacing="12">VENI ARCANA</text>
+  <text x="450" y="520" fill="#b9ab91" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" letter-spacing="5">VISUAL IDENTITY IN DEVELOPMENT</text>
+</svg>

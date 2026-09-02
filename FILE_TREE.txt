@@ -1,11 +1,15 @@
 ./.nojekyll
 ./404.html
-./CNAME
 ./FILE_TREE.txt
+./PREVIEW_README.txt
 ./README.md
+./README.txt
 ./about/index.html
+./account/index.html
 ./ai-geopolitic/index.html
+./arcana/index.html
 ./assets/css/site.css
+./assets/css/v2.css
 ./assets/images/ai-amari-ndlovu.webp
 ./assets/images/ai-briefing-1.webp
 ./assets/images/ai-diane-sterling.webp
@@ -15,6 +19,7 @@
 ./assets/images/ai-nora.webp
 ./assets/images/ai-thabo-mokoena.webp
 ./assets/images/animals-cover.webp
+./assets/images/arcana-placeholder.svg
 ./assets/images/buza-placeholder.svg
 ./assets/images/faithful-logo.webp
 ./assets/images/faithful-posts.webp
