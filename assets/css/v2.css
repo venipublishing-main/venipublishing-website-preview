@@ -152,3 +152,212 @@
   .account-library-demo{grid-template-columns:1fr}
   .roadmap-grid{grid-template-columns:1fr}
 }
+
+
+/* =========================================================
+   v2.1 — visual-fidelity pass from rendered desktop review
+   ========================================================= */
+
+/* Parent hero: retain the editorial drama while getting the
+   supporting copy / calls-to-action and lower orbit nodes into
+   view sooner on common laptop-height viewports. */
+@media (min-width:821px){
+  .parent-v20 .hero-inner{
+    min-height:540px;
+    padding:3.7rem 0 3.9rem;
+    gap:2.4rem;
+  }
+  .parent-v20 .hero-copy h1{
+    font-size:clamp(2.75rem,5.45vw,5.25rem);
+    max-width:660px;
+  }
+  .parent-v20 .hero-copy .lead{
+    margin:1.15rem 0 1.45rem;
+  }
+  .parent-v20 .ecosystem-orbit{
+    min-height:390px;
+  }
+  .parent-v20 .orbit-core{
+    width:164px;
+    height:164px;
+  }
+  .parent-v20 .orbit-core img{
+    width:100px;
+  }
+  .parent-v20 .orbit-item{
+    width:90px;
+    height:90px;
+  }
+  .parent-v20 .orbit-item.kids{top:0;left:47%}
+  .parent-v20 .orbit-item.ai{top:27%;left:7%}
+  .parent-v20 .orbit-item.faith{top:24%;right:5%}
+  .parent-v20 .orbit-item.mythos{bottom:4%;left:17%}
+  .parent-v20 .orbit-item.arcana{bottom:0;left:45%}
+  .parent-v20 .orbit-item.buza{bottom:7%;right:12%}
+}
+
+/* Slightly ease the desktop navigation now that Account exists. */
+.parent-v20 .desktop-nav{gap:1.35rem}
+.parent-v20 .nav-account{
+  background:rgba(255,255,255,.025);
+  border-color:rgba(220,195,152,.38);
+}
+
+/* Arcana: the current artwork is explicitly provisional, but it
+   should still feel intentional rather than like a small placeholder. */
+.arcana-hero{
+  position:relative;
+  overflow:hidden;
+}
+.arcana-hero::before{
+  content:"";
+  position:absolute;
+  inset:-10% -5% auto 48%;
+  height:115%;
+  pointer-events:none;
+  opacity:.27;
+  background:
+    radial-gradient(circle at 55% 42%,transparent 0 96px,rgba(198,154,75,.18) 97px 98px,transparent 99px 155px,rgba(198,154,75,.10) 156px 157px,transparent 158px 230px),
+    linear-gradient(135deg,transparent 49.7%,rgba(198,154,75,.08) 50%,transparent 50.3%);
+}
+.arcana-hero .hero-inner{
+  position:relative;
+  z-index:1;
+}
+@media (min-width:821px){
+  .arcana-hero .hero-inner{
+    min-height:550px;
+    grid-template-columns:.95fr 1.05fr;
+    gap:3.4rem;
+    padding:4.1rem 0;
+  }
+  .arcana-art{
+    max-width:490px;
+    padding:.72rem;
+  }
+}
+.arcana-provisional{
+  max-width:490px;
+  margin:.75rem auto 0;
+  font-size:.68rem;
+  line-height:1.35;
+  opacity:.78;
+}
+
+/* Mobile parent experience: do not shrink a six-node desktop orbit
+   until it becomes illegible. Convert it into a clear 2 x 3 platform
+   constellation beneath the crest. */
+@media(max-width:560px){
+  .parent-v20 .ecosystem-wrap{
+    margin-top:.4rem;
+  }
+  .parent-v20 .ecosystem-orbit{
+    min-height:0;
+    margin:1.1rem 0 0;
+    transform:none;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:.7rem;
+    place-items:stretch;
+  }
+  .parent-v20 .orbit-core{
+    position:static;
+    grid-column:1/-1;
+    justify-self:center;
+    width:116px;
+    height:116px;
+    margin:0 0 .35rem;
+    box-shadow:0 0 0 14px rgba(184,138,60,.05),0 0 0 30px rgba(184,138,60,.025);
+  }
+  .parent-v20 .orbit-core img{
+    width:74px;
+  }
+  .parent-v20 .orbit-item,
+  .parent-v20 .orbit-item.kids,
+  .parent-v20 .orbit-item.ai,
+  .parent-v20 .orbit-item.faith,
+  .parent-v20 .orbit-item.mythos,
+  .parent-v20 .orbit-item.arcana,
+  .parent-v20 .orbit-item.buza{
+    position:static;
+    width:auto;
+    height:auto;
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    padding:.55rem;
+    border:1px solid rgba(216,175,101,.26);
+    border-radius:.6rem;
+    background:rgba(5,30,27,.58);
+    font-family:inherit;
+    font-size:inherit;
+  }
+  .parent-v20 .orbit-visual{
+    flex:0 0 56px;
+    width:56px;
+    height:56px;
+    border-width:2px;
+    box-shadow:0 8px 18px rgba(0,0,0,.28);
+  }
+  .parent-v20 .orbit-label,
+  .parent-v20 .orbit-item.ai .orbit-label,
+  .parent-v20 .orbit-item.faith .orbit-label,
+  .parent-v20 .orbit-item.buza .orbit-label{
+    position:static;
+    inset:auto;
+    width:auto;
+    max-width:none;
+    min-width:0;
+    transform:none;
+    opacity:1;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    text-align:left;
+  }
+  .parent-v20 .orbit-label strong{
+    font-size:.75rem;
+    line-height:1.15;
+  }
+  .parent-v20 .orbit-label small{
+    display:block;
+    margin-top:.14rem;
+    font-size:.58rem;
+    line-height:1.2;
+    color:rgba(255,255,255,.66);
+  }
+  .parent-v20 .orbit-item:hover .orbit-label,
+  .parent-v20 .orbit-item:focus-visible .orbit-label{
+    transform:none;
+    background:transparent;
+  }
+  .parent-v20 .orbit-caption{
+    margin-top:.9rem;
+  }
+
+  .arcana-hero::before{
+    inset:38% -35% auto 5%;
+    height:55%;
+    opacity:.2;
+  }
+  .arcana-art{
+    width:min(100%,390px);
+    margin-top:.5rem;
+  }
+  .arcana-provisional{
+    font-size:.62rem;
+    padding-inline:.5rem;
+  }
+}
+
+/* Small-screen header: keep identity readable while preventing
+   the parent brand lockup from fighting the menu button. */
+@media(max-width:420px){
+  .parent-v20 .brand-copy small{
+    letter-spacing:.11em;
+    font-size:.55rem;
+  }
+}
