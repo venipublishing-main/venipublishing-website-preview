@@ -1,4 +1,4 @@
 window.VENI_SUPABASE = {
-  url: "https://YOUR_PROJECT_REF.supabase.co",
-  publishableKey: "YOUR_SB_PUBLISHABLE_KEY"
+  url: "https://droslqfcazwkwvqlbtsq.supabase.co",
+  publishableKey: "sb_publishable_v7dkG118DobqayECLngcbA_DUuO4ZAc"
 };
