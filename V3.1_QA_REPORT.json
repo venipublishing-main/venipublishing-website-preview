@@ -1,0 +1,31 @@
+{
+  "version": "v3.1",
+  "files_changed": 7,
+  "routes_hardened": [
+    "/account/",
+    "/account/library/",
+    "/account/settings/",
+    "/account/sign-in/",
+    "/account/register/",
+    "/arcana/"
+  ],
+  "direct_tool_links": {
+    "account_home": [
+      "library",
+      "settings",
+      "arcana draw",
+      "saved readings",
+      "arcana journal"
+    ],
+    "arcana_overview": [
+      "overview",
+      "draw",
+      "saved readings",
+      "journal",
+      "account library",
+      "account settings via footer"
+    ]
+  },
+  "database_changes": false,
+  "veni_kids_changed": false
+}

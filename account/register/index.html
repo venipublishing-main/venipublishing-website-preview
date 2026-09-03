@@ -6,24 +6,33 @@
 <title>Create account | Veni Account</title><meta name="theme-color" content="#0e2f2b">
 <link rel="stylesheet" href="../../assets/css/site.css?v=1.9">
 <link rel="stylesheet" href="../../assets/css/v2.css?v=2.1">
-<link rel="stylesheet" href="../../assets/css/account-v2.css?v=2.2">
+<link rel="stylesheet" href="../../assets/css/account-v2.css?v=3.1">
 <script defer src="../../assets/js/site.js?v=1.9"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script defer src="../../assets/js/supabase-config.js"></script>
-<script defer src="../../assets/js/veni-account.js?v=2.2"></script>
+<script defer src="../../assets/js/veni-account.js?v=3.1"></script>
 </head>
 <body class="parent-v20" data-veni-account-app><a class="skip-link" href="#main">Skip to content</a><header class="site-header parent-v18-header"><div class="container nav">
 <a class="brand" href="../../" aria-label="Veni Publishing home"><img src="../../assets/images/veni-crest.svg" alt=""><span class="brand-copy"><strong>VENI PUBLISHING</strong><small>Truth · Purpose · Legacy</small></span></a>
 <nav class="desktop-nav" aria-label="Primary navigation"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a class="nav-account" href="../../account/" aria-current="page">Veni Account</a><a class="nav-cta" href="../../contact/">Contact &amp; collaborate</a></nav>
 <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span></span></button></div>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu hidden><div class="container"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a href="../../account/" aria-current="page">Veni Account</a><a href="../../contact/">Contact</a></div></nav></header>
-<main id="main" class="account-app"><section class="account-page-hero"><div class="container"><span class="eyebrow">Veni Account</span><h1>Create your account.</h1><p class="lead">For adults using Veni Publishing’s digital library and selected interactive services.</p></div></section>
+<main id="main" class="account-app">
+<section class="account-page-hero"><div class="container"><span class="eyebrow">Veni Account</span><h1>Create your account.</h1><p class="lead">For adults using Veni Publishing’s digital library and selected interactive services.</p><nav class="account-tool-nav" aria-label="Veni Account tools"><a href="../../account/" aria-current="page">Account home</a><a href="../../account/library/">My Library</a><a href="../../account/settings/">Settings</a><a href="../../arcana/draw/">Arcana Draw</a><a href="../../arcana/readings/">Saved Readings</a><a href="../../arcana/journal/">Arcana Journal</a></nav></div></section>
 <section class="section section-paper"><div class="narrow"><div class="account-status" data-account-status hidden></div>
-<div class="account-panel" data-signed-out-only><form class="account-form" data-register-form data-confirm-url="../" data-success-url="../"><div class="account-field"><label for="display_name">Display name</label><input id="display_name" name="display_name" type="text" maxlength="80"></div><div class="account-field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="account-field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="10" required></div><label><input type="checkbox" required> I confirm that I am creating this account as an adult user and accept the <a href="../../terms/">Terms of Use</a> and <a href="../../privacy/">Privacy Notice</a>.</label><button class="btn btn-primary" type="submit">Create Veni Account</button></form></div>
-<div class="account-panel" data-signed-in-only hidden><h2>You are already signed in.</h2><a class="btn btn-primary" href="../">Go to my account</a></div></div></section></main><footer class="site-footer parent-v18-footer"><div class="container footer-grid">
+<div class="account-panel" data-signed-out-only>
+<form class="account-form" data-register-form data-confirm-url="../" data-success-url="../">
+<div class="account-field"><label for="display_name">Display name</label><input id="display_name" name="display_name" type="text" maxlength="80"></div>
+<div class="account-field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="account-field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="10" required></div>
+<label><input type="checkbox" required> I confirm that I am creating this account as an adult user and accept the <a href="../../terms/">Terms of Use</a> and <a href="../../privacy/">Privacy Notice</a>.</label>
+<button class="btn btn-primary" type="submit">Create Veni Account</button>
+</form></div>
+<div class="account-panel" data-signed-in-only hidden><h2>You are already signed in.</h2><div class="actions"><a class="btn btn-primary" href="../">Open account hub</a><a class="btn btn-secondary" href="../../arcana/draw/">Arcana Draw</a></div></div>
+</div></section></main><footer class="site-footer parent-v18-footer"><div class="container footer-grid">
 <div class="footer-brand"><img src="../../assets/images/veni-crest.svg" alt=""><p>Veni Publishing</p><span>Independent South African publishing, media and education.</span></div>
 <div class="footer-col"><h3>Account</h3><a href="../../account/">Account home</a><a href="../../account/library/">My Library</a><a href="../../account/settings/">Settings</a></div>
-<div class="footer-col"><h3>Platforms</h3><a href="../../kids/">Veni Kids</a><a href="../../mythos/">Veni Mythos</a><a href="../../arcana/">Veni Arcana</a></div>
+<div class="footer-col"><h3>Veni Arcana</h3><a href="../../arcana/">Overview</a><a href="../../arcana/draw/">Draw a card</a><a href="../../arcana/readings/">Saved readings</a><a href="../../arcana/journal/">Journal</a></div>
 <div class="footer-col"><h3>Legal</h3><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms</a></div>
-<div class="footer-col"><h3>Status</h3><span>Stage 2 preview</span><span>No payments enabled</span></div></div>
+<div class="footer-col"><h3>Status</h3><span>Veni Account preview</span><span>Arcana pilot active</span></div></div>
 <div class="container footer-bottom"><span>© 2026 Veni Publishing. All rights reserved.</span><span>Pretoria, South Africa</span></div></footer></body></html>
