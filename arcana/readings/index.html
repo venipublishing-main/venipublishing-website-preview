@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saved Readings | Veni Arcana</title>
+<meta name="description" content="Private saved Veni Arcana readings associated with a signed-in Veni Account.">
+<meta name="theme-color" content="#151522">
+<link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/site.css?v=1.9">
+<link rel="stylesheet" href="../../assets/css/v2.css?v=2.1">
+<link rel="stylesheet" href="../../assets/css/arcana-pilot.css?v=3.0">
+<script defer src="../../assets/js/site.js?v=1.9"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="../../assets/js/supabase-config.js"></script>
+<script defer src="../../assets/js/arcana-pilot.js?v=3.0"></script>
+</head>
+<body class="theme-arcana" data-arcana-pilot="readings">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header parent-v18-header">
+  <div class="container nav">
+    <a class="brand" href="../../" aria-label="Veni Publishing home"><img src="../../assets/images/veni-crest.svg" alt=""><span class="brand-copy"><strong>VENI PUBLISHING</strong><small>Truth · Purpose · Legacy</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a class="nav-account" href="../../account/">Veni Account</a><a class="nav-cta" href="../../contact/">Contact &amp; collaborate</a></nav>
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu hidden><div class="container"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a href="../../account/">Veni Account</a><a href="../../contact/">Contact</a></div></nav>
+</header>
+
+<main id="main">
+<section class="arcana-pilot-hero"><div class="container">
+  <span class="arcana-pilot-badge">Veni Account · Private</span>
+  <h1>Saved readings.</h1>
+  <p class="lead">Your private Arcana history. Only readings saved while signed in appear here.</p>
+  <nav class="arcana-subnav" aria-label="Veni Arcana"><a href="../">Overview</a><a href="../draw/">Draw</a><a href="../readings/" aria-current="page">Saved readings</a><a href="../journal/">Journal</a></nav>
+</div></section>
+<section class="section arcana-paper"><div class="container">
+  <div class="arcana-pilot-status" data-arcana-status hidden></div>
+  <div class="arcana-auth-required" data-auth-required hidden>
+    <h2>Sign in to view your readings.</h2>
+    <p>Saved readings are private to your Veni Account.</p>
+    <a class="btn btn-bronze" href="../../account/sign-in/">Sign in</a>
+  </div>
+  <div data-auth-content hidden>
+    <div class="section-head"><div><span class="eyebrow">History</span><h2>Your Arcana reflections</h2><p>Stage 3 stores only readings you explicitly choose to save.</p></div></div>
+    <div class="arcana-history-list" data-readings-list></div>
+    <div class="arcana-privacy-note" data-readings-empty hidden>No saved readings yet. <a href="../draw/"><strong>Draw a card</strong></a> and choose Save reading.</div>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-footer parent-v18-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="../../assets/images/veni-crest.svg" alt=""><p>Veni Publishing</p><span>Independent South African publishing, media and education.</span></div>
+    <div class="footer-col"><h3>Veni Arcana</h3><a href="../../arcana/">Overview</a><a href="../../arcana/draw/">Draw a card</a><a href="../../arcana/readings/">Saved readings</a><a href="../../arcana/journal/">Journal</a></div>
+    <div class="footer-col"><h3>Platforms</h3><a href="../../kids/">Veni Kids</a><a href="../../ai-geopolitic/">AI Geopolitic</a><a href="../../faithful/">Veni Faithful</a><a href="../../mythos/">Veni Mythos</a><a href="../../buza/">BUZA</a></div>
+    <div class="footer-col"><h3>Legal</h3><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms of use</a></div>
+    <div class="footer-col"><h3>Status</h3><span>Arcana single-card pilot</span><span>Preview environment</span></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 Veni Publishing. All rights reserved.</span><span>Independent publishing · Pretoria, South Africa</span></div>
+</footer>
+
+</body></html>

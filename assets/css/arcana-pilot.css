@@ -1,0 +1,119 @@
+.arcana-pilot-hero{
+  padding:4rem 0 3.2rem;
+  color:#f4ead7;
+  background:
+    radial-gradient(circle at 78% 12%,rgba(198,154,75,.18),transparent 24rem),
+    linear-gradient(125deg,#0f0f18,#1d1d2c 68%,#171723);
+  border-bottom:1px solid rgba(198,154,75,.35)
+}
+.arcana-pilot-hero .lead{color:#c6beae;max-width:760px}
+.arcana-subnav{
+  display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem
+}
+.arcana-subnav a{
+  color:#e8d5ae;text-decoration:none;border:1px solid rgba(198,154,75,.32);
+  border-radius:999px;padding:.48rem .75rem;font-size:.72rem;font-weight:900;letter-spacing:.04em
+}
+.arcana-subnav a[aria-current="page"]{background:rgba(198,154,75,.17);border-color:rgba(198,154,75,.62)}
+.arcana-pilot-shell{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(340px,1.15fr);
+  gap:2rem;align-items:start
+}
+.arcana-control-panel,.arcana-result-panel{
+  border:1px solid rgba(50,43,34,.18);background:rgba(255,255,255,.54);
+  border-radius:.55rem;padding:1.35rem
+}
+.arcana-control-panel h2,.arcana-result-panel h2{margin-bottom:.5rem}
+.arcana-field{display:grid;gap:.4rem;margin-top:1rem}
+.arcana-field label{font-size:.73rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#6f5428}
+.arcana-field input,.arcana-field textarea{
+  width:100%;border:1px solid rgba(34,29,23,.28);border-radius:.35rem;background:#fffdf8;
+  color:#1d1c20;padding:.8rem .85rem;font:inherit
+}
+.arcana-field textarea{min-height:110px;resize:vertical}
+.arcana-field input:focus,.arcana-field textarea:focus{outline:3px solid rgba(198,154,75,.28);outline-offset:2px}
+.arcana-field small{color:#706b62;font-size:.72rem;line-height:1.45}
+.arcana-draw-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem}
+.arcana-card-stage{
+  min-height:470px;display:grid;place-items:center;padding:1rem;
+  perspective:1200px
+}
+.arcana-card-frame{
+  position:relative;width:min(310px,82vw);aspect-ratio:2/3;
+  border:1px solid rgba(198,154,75,.62);background:#12121e;
+  box-shadow:0 25px 55px rgba(0,0,0,.28);overflow:hidden
+}
+.arcana-card-back,.arcana-card-front{
+  position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+  padding:1.4rem;transition:opacity .42s ease,transform .42s ease
+}
+.arcana-card-back{
+  background:
+    radial-gradient(circle at 50% 50%,transparent 0 63px,rgba(198,154,75,.28) 64px 65px,transparent 66px 100px,rgba(198,154,75,.16) 101px 102px,transparent 103px),
+    linear-gradient(135deg,transparent 49.7%,rgba(198,154,75,.12) 50%,transparent 50.3%),
+    #151522
+}
+.arcana-card-back img{width:68%;max-height:68%;object-fit:contain;opacity:.9}
+.arcana-card-front{
+  opacity:0;transform:rotateY(8deg) scale(.97);
+  background:
+    radial-gradient(circle at 50% 22%,rgba(198,154,75,.13),transparent 14rem),
+    #eee2c8;color:#1b1a20
+}
+.arcana-card-stage[data-revealed="true"] .arcana-card-back{opacity:0;transform:rotateY(-8deg) scale(.97)}
+.arcana-card-stage[data-revealed="true"] .arcana-card-front{opacity:1;transform:none}
+.arcana-card-number{font-family:Georgia,"Times New Roman",serif;font-size:2rem;color:#986d2e}
+.arcana-card-name{font-family:Georgia,"Times New Roman",serif;font-size:2.1rem;line-height:1.05;margin:.5rem 0}
+.arcana-card-stage-label{
+  display:inline-flex;border:1px solid rgba(145,102,43,.35);border-radius:999px;
+  padding:.3rem .55rem;font-size:.62rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#7a5828
+}
+.arcana-reading-copy{
+  margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(34,29,23,.12)
+}
+.arcana-reading-copy h3{font-size:1rem;margin:.75rem 0 .25rem}
+.arcana-reading-copy p{color:#5e5a54}
+.arcana-question-out{
+  font-size:.75rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#7b5b2b
+}
+.arcana-pilot-status{
+  margin-bottom:1rem;padding:.75rem .9rem;border:1px solid rgba(50,43,34,.18);
+  border-radius:.35rem;background:#fffdf8;color:#4e504c
+}
+.arcana-pilot-status[data-kind="error"]{background:#fff0ec;border-color:#9b4a3d;color:#6f281e}
+.arcana-pilot-status[data-kind="success"]{background:#edf6ef;border-color:#4e765d;color:#224b31}
+.arcana-pilot-status[data-kind="info"]{background:#fff8e8;border-color:#b88a3c;color:#674719}
+.arcana-privacy-note{
+  margin-top:1rem;border-left:4px solid #b68a42;padding:.85rem 1rem;background:rgba(255,255,255,.45);
+  color:#5d5951;font-size:.8rem
+}
+.arcana-history-list,.arcana-journal-list{display:grid;gap:1rem;margin-top:1.2rem}
+.arcana-history-card,.arcana-journal-card{
+  border:1px solid rgba(50,43,34,.18);background:rgba(255,255,255,.58);padding:1.25rem;border-radius:.45rem
+}
+.arcana-history-meta{display:flex;justify-content:space-between;gap:1rem;color:#7b6d5a;font-size:.68rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.arcana-history-cardname{display:flex;gap:.7rem;align-items:baseline;margin:.6rem 0}
+.arcana-history-cardname>span{font-family:Georgia,serif;color:#9e7333;font-size:1.15rem}
+.arcana-history-card h2,.arcana-journal-card h2{font-size:1.45rem;margin:0}
+.arcana-history-question{color:#5f5548}
+.arcana-history-card blockquote,.arcana-journal-card blockquote{
+  margin:.9rem 0 0;padding:.85rem 1rem;border-left:3px solid #b68a42;background:#f8f0e2;color:#47443f
+}
+.arcana-muted{color:#817a70;font-style:italic}
+.arcana-auth-required{
+  border:1px solid rgba(198,154,75,.3);background:#1d1d2b;color:#eee4d2;padding:1.4rem;border-radius:.45rem
+}
+.arcana-auth-required p{color:#bdb4a5}
+.arcana-pilot-badge{
+  display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(198,154,75,.46);
+  border-radius:999px;padding:.38rem .65rem;color:#d9b572;font-size:.65rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase
+}
+.arcana-pilot-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#c69a4b}
+@media(max-width:900px){
+  .arcana-pilot-shell{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .arcana-pilot-hero{padding:3rem 0 2.4rem}
+  .arcana-card-stage{min-height:420px;padding:.5rem}
+  .arcana-control-panel,.arcana-result-panel{padding:1rem}
+}

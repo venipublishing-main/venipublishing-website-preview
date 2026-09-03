@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Draw a Card | Veni Arcana</title>
+<meta name="description" content="A preview single-card reflective draw for Veni Arcana and Tarot of the African South.">
+<meta name="theme-color" content="#151522">
+<link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/site.css?v=1.9">
+<link rel="stylesheet" href="../../assets/css/v2.css?v=2.1">
+<link rel="stylesheet" href="../../assets/css/arcana-pilot.css?v=3.0">
+<script defer src="../../assets/js/site.js?v=1.9"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="../../assets/js/supabase-config.js"></script>
+<script defer src="../../assets/js/arcana-pilot.js?v=3.0"></script>
+</head>
+<body class="theme-arcana" data-arcana-pilot="draw">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header parent-v18-header">
+  <div class="container nav">
+    <a class="brand" href="../../" aria-label="Veni Publishing home"><img src="../../assets/images/veni-crest.svg" alt=""><span class="brand-copy"><strong>VENI PUBLISHING</strong><small>Truth · Purpose · Legacy</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a class="nav-account" href="../../account/">Veni Account</a><a class="nav-cta" href="../../contact/">Contact &amp; collaborate</a></nav>
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span></span></button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu hidden><div class="container"><a href="../../">Home</a><a href="../../platforms/">Platforms</a><a href="../../releases/">Releases</a><a href="../../about/">About</a><a href="../../account/">Veni Account</a><a href="../../contact/">Contact</a></div></nav>
+</header>
+
+<main id="main">
+<section class="arcana-pilot-hero"><div class="container">
+  <span class="arcana-pilot-badge">Stage 3 · Preview pilot</span>
+  <h1>Draw one card.</h1>
+  <p class="lead">A simple reflective encounter with the developing <em>Tarot of the African South</em>. The draw is free. An account is only needed if you want to save it or add a private journal note.</p>
+  <nav class="arcana-subnav" aria-label="Veni Arcana"><a href="../">Overview</a><a href="../draw/" aria-current="page">Draw</a><a href="../readings/">Saved readings</a><a href="../journal/">Journal</a></nav>
+</div></section>
+
+<section class="section arcana-paper"><div class="container">
+  <div class="arcana-pilot-status" data-arcana-status hidden></div>
+  <div class="arcana-pilot-shell">
+    <div class="arcana-control-panel">
+      <span class="eyebrow">Before the draw</span>
+      <h2>Hold a question—or leave it open.</h2>
+      <p>The prompt is optional. It stays in your browser unless you choose to save the reading to your Veni Account.</p>
+
+      <div class="arcana-field">
+        <label for="arcana-question">Optional focus or question</label>
+        <input id="arcana-question" data-draw-question type="text" maxlength="1000" placeholder="What needs my attention today?">
+        <small>A reflective question works better than a request for certainty or prediction.</small>
+      </div>
+
+      <div class="arcana-draw-actions">
+        <button class="btn btn-bronze" type="button" data-draw-card>Draw a card</button>
+        <button class="btn btn-secondary" type="button" data-draw-again>Draw again</button>
+      </div>
+
+      <div class="arcana-privacy-note">
+        <strong>Preview boundary.</strong><br>
+        The mechanics are real; the six card interpretations currently loaded are pilot copy, not final canonical wording from the completed Arcana dossiers.
+      </div>
+    </div>
+
+    <div class="arcana-result-panel">
+      <div class="arcana-card-stage" data-card-stage>
+        <div class="arcana-card-frame">
+          <div class="arcana-card-back">
+            <img src="../../assets/images/arcana-placeholder.svg" alt="Veni Arcana provisional card back">
+          </div>
+          <div class="arcana-card-front">
+            <div>
+              <span class="arcana-card-stage-label" data-card-content-stage>Pilot interpretation</span>
+              <div class="arcana-card-number" data-card-number>·</div>
+              <div class="arcana-card-name" data-card-name>Veni Arcana</div>
+              <p>Tarot of the African South</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-card-result hidden>
+        <div class="arcana-reading-copy">
+          <div class="arcana-question-out" data-card-question hidden></div>
+          <h3>Reflection</h3>
+          <p data-card-meaning></p>
+          <h3>Consider</h3>
+          <p data-card-prompt></p>
+        </div>
+
+        <div data-save-area hidden>
+          <div class="arcana-field">
+            <label for="arcana-note">Private journal note · optional</label>
+            <textarea id="arcana-note" data-journal-note maxlength="10000" placeholder="What does this bring up for you?"></textarea>
+            <small>This note is only stored if you save the reading while signed in.</small>
+          </div>
+          <div class="arcana-draw-actions">
+            <button class="btn btn-bronze" type="button" data-save-reading>Save reading</button>
+            <a class="btn btn-secondary" data-saved-reading-link hidden href="../readings/">Open saved readings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arcana-disclaimer" style="margin-top:1.5rem">
+    Veni Arcana is an interpretive and reflective experience. It does not provide medical, legal, financial or other professional advice, and a card draw should not be treated as a factual prediction.
+  </div>
+</div></section>
+</main>
+
+<footer class="site-footer parent-v18-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="../../assets/images/veni-crest.svg" alt=""><p>Veni Publishing</p><span>Independent South African publishing, media and education.</span></div>
+    <div class="footer-col"><h3>Veni Arcana</h3><a href="../../arcana/">Overview</a><a href="../../arcana/draw/">Draw a card</a><a href="../../arcana/readings/">Saved readings</a><a href="../../arcana/journal/">Journal</a></div>
+    <div class="footer-col"><h3>Platforms</h3><a href="../../kids/">Veni Kids</a><a href="../../ai-geopolitic/">AI Geopolitic</a><a href="../../faithful/">Veni Faithful</a><a href="../../mythos/">Veni Mythos</a><a href="../../buza/">BUZA</a></div>
+    <div class="footer-col"><h3>Legal</h3><a href="../../privacy/">Privacy</a><a href="../../terms/">Terms of use</a></div>
+    <div class="footer-col"><h3>Status</h3><span>Arcana single-card pilot</span><span>Preview environment</span></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 Veni Publishing. All rights reserved.</span><span>Independent publishing · Pretoria, South Africa</span></div>
+</footer>
+
+</body></html>

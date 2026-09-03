@@ -37,6 +37,34 @@
 
   window.veniAccount = { client };
 
+  const getSafeNext = () => {
+    const candidates = [
+      new URLSearchParams(window.location.search).get("next"),
+      (() => { try { return sessionStorage.getItem("veni_after_auth"); } catch { return null; } })()
+    ].filter(Boolean);
+
+    for (const raw of candidates) {
+      try {
+        const url = new URL(raw, window.location.href);
+        if (url.origin === window.location.origin) return url.href;
+      } catch {}
+    }
+    return null;
+  };
+
+  const rememberNext = () => {
+    const next = getSafeNext();
+    if (!next) return null;
+    try { sessionStorage.setItem("veni_after_auth", next); } catch {}
+    return next;
+  };
+
+  const redirectAfterAuth = fallback => {
+    const next = getSafeNext();
+    try { sessionStorage.removeItem("veni_after_auth"); } catch {}
+    window.location.href = next || fallback;
+  };
+
   const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   })[c]);
@@ -94,6 +122,8 @@
     }
   };
 
+  rememberNext();
+
   document.querySelectorAll("[data-sign-in-form]").forEach(form => {
     form.addEventListener("submit", async e => {
       e.preventDefault();
@@ -104,7 +134,7 @@
         password: String(fd.get("password") || "")
       });
       if (error) return setStatus(error.message, "error");
-      window.location.href = form.dataset.successUrl || "../";
+      redirectAfterAuth(form.dataset.successUrl || "../");
     });
   });
 
@@ -115,7 +145,9 @@
       const password = String(fd.get("password") || "");
       if (password.length < 10) return setStatus("Please use a password of at least 10 characters.", "error");
 
-      const redirectTo = new URL(form.dataset.confirmUrl || "../", window.location.href).href;
+      const next = rememberNext();
+      const redirectTo = next || new URL(form.dataset.confirmUrl || "../", window.location.href).href;
+
       const { data, error } = await client.auth.signUp({
         email: String(fd.get("email") || "").trim(),
         password,
@@ -124,9 +156,10 @@
           data: { display_name: String(fd.get("display_name") || "").trim() }
         }
       });
+
       if (error) return setStatus(error.message, "error");
       if (!data.session) return setStatus("Account created. Check your email to confirm your address before signing in.", "success");
-      window.location.href = form.dataset.successUrl || "../";
+      redirectAfterAuth(form.dataset.successUrl || "../");
     });
   });
 

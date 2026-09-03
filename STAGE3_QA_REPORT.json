@@ -1,0 +1,30 @@
+{
+  "version": "v3.0",
+  "target": "preview only",
+  "backend_applied": true,
+  "security": {
+    "all_arcana_tables_rls": true,
+    "save_rpc_security": "SECURITY INVOKER; authenticated execute only",
+    "anonymous_journal_access": false,
+    "anonymous_saved_reading_access": false,
+    "public_card_access": "pilot/active public_preview rows only"
+  },
+  "routes": [
+    "/arcana/",
+    "/arcana/draw/",
+    "/arcana/readings/",
+    "/arcana/journal/"
+  ],
+  "deferred": [
+    "Canonical dossier-derived card content",
+    "Final Arcana card artwork",
+    "Account-wide linkage audit for Library/Settings/etc.",
+    "Premium spreads / credits / payments",
+    "Journal editing and deletion UI"
+  ],
+  "migration_versions": [
+    "20260903071048_revoke_handle_new_user_rpc_access",
+    "20260903072229_arcana_stage3_pilot_foundation"
+  ],
+  "repository_cleanup": "Delete old duplicate 20260903_002_revoke_handle_new_user_rpc_access.sql if present."
+}
