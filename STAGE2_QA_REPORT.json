@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checks": [
+    "5 account pages created",
+    "preview noindex retained",
+    "no service-role key included",
+    "RLS policies included",
+    "entitlements have no browser write policy",
+    "Veni Kids unchanged"
+  ]
+}
