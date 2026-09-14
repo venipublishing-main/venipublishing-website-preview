@@ -1,0 +1,36 @@
+{
+  "version": "3.2",
+  "target": "preview",
+  "backend": {
+    "delete_account_edge_function_deployed": true,
+    "verify_jwt": true,
+    "service_role_exposed_to_browser": false
+  },
+  "routes_added": [
+    "/account/forgot-password/",
+    "/account/reset-password/"
+  ],
+  "lifecycle": [
+    "register",
+    "confirm email",
+    "sign in",
+    "forgot password",
+    "reset password",
+    "profile update",
+    "email change request",
+    "sign out",
+    "delete account"
+  ],
+  "privacy_terms_updated": true,
+  "database_schema_changed": false,
+  "veni_kids_changed": false,
+  "manual_cleanup": [
+    "Delete supabase/migrations/20260903_002_revoke_handle_new_user_rpc_access.sql"
+  ],
+  "deferred": [
+    "Full cross-site signed-in header audit",
+    "Production Supabase canonical migration baseline",
+    "Commerce-specific retention/refund terms",
+    "Final legal review before production"
+  ]
+}

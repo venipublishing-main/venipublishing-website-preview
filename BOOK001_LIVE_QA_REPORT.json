@@ -1,0 +1,68 @@
+{
+  "version": "Stage 3.2 catch-up + Book 001 LIVE",
+  "date": "2026-09-13",
+  "amazon_url": "https://www.amazon.com/dp/1048338150",
+  "permanent_kids_qr_route": "https://venipublishing.co.za/kids/",
+  "checks": {
+    "all_required_files_present": true,
+    "permanent_kids_route_file_present": true,
+    "animals_route_file_present": true,
+    "freebies_route_file_present": true,
+    "no_stale_book001_coming_soon_wording": true,
+    "all_amazon_links_exact": true,
+    "all_amazon_links_new_tab_safe_rel": true,
+    "amazon_link_count": 7,
+    "kids_canonical_preserved": true,
+    "freebies_retains_downloads_being_prepared": true,
+    "freebies_no_personal_info_requirement": true,
+    "printable_pdf_not_claimed_live": true,
+    "animals_structured_data_keeps_veni_canonical_and_amazon_offer": true
+  },
+  "stale_wording_by_file": {
+    "index.html": [],
+    "platforms/index.html": [],
+    "releases/index.html": [],
+    "kids/index.html": [],
+    "kids/books/index.html": [],
+    "kids/animals/index.html": [],
+    "kids/freebies/index.html": []
+  },
+  "amazon_links": [
+    {
+      "file": "index.html",
+      "label": "Buy on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "releases/index.html",
+      "label": "Buy on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "kids/index.html",
+      "label": "Buy on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "kids/books/index.html",
+      "label": "Buy paperback on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "kids/animals/index.html",
+      "label": "Buy paperback on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "kids/animals/index.html",
+      "label": "Amazon.com",
+      "href": "https://www.amazon.com/dp/1048338150"
+    },
+    {
+      "file": "kids/freebies/index.html",
+      "label": "Buy paperback on Amazon",
+      "href": "https://www.amazon.com/dp/1048338150"
+    }
+  ],
+  "mobile_note": "No new fixed-width mobile-breaking layout rules were added. Existing responsive action/button patterns are reused; final visual phone QA remains recommended after GitHub Pages rebuild."
+}

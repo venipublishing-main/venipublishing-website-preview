@@ -8,6 +8,7 @@
   const signedOut = [...document.querySelectorAll("[data-signed-out-only]")];
   const authViews = [...document.querySelectorAll("[data-auth-view]")];
   const userEmails = [...document.querySelectorAll("[data-user-email]")];
+  const accountNav = [...document.querySelectorAll("[data-account-nav]")];
 
   const setStatus = (message, kind = "info") => {
     if (!status) return;
@@ -24,7 +25,7 @@
     !config.publishableKey.includes("YOUR_SB_PUBLISHABLE_KEY");
 
   if (!configured || !window.supabase?.createClient) {
-    setStatus("Stage 2 is installed, but the preview is not yet connected to a dedicated Veni staging Supabase project.", "setup");
+    setStatus("The Veni Account preview is not connected to its staging backend.", "setup");
     document.documentElement.dataset.accountState = "unconfigured";
     signedIn.forEach(el => el.hidden = true);
     signedOut.forEach(el => el.hidden = false);
@@ -34,7 +35,6 @@
   const client = window.supabase.createClient(config.url, config.publishableKey, {
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
   });
-
   window.veniAccount = { client };
 
   const getSafeNext = () => {
@@ -69,11 +69,22 @@
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   })[c]);
 
-  const loadProfile = async (id) => {
-    const el = document.querySelector("[data-profile-display-name]");
-    if (!el) return;
-    const { data } = await client.from("profiles").select("display_name").eq("id", id).maybeSingle();
-    el.textContent = data?.display_name || "Veni member";
+  const markSession = user => {
+    document.documentElement.dataset.accountState = user ? "signed-in" : "signed-out";
+    accountNav.forEach(link => {
+      link.textContent = user ? "My Account" : "Veni Account";
+      link.dataset.signedIn = user ? "true" : "false";
+    });
+  };
+
+  const loadProfile = async id => {
+    const display = document.querySelector("[data-profile-display-name]");
+    const input = document.querySelector("[data-profile-display-name-input]");
+    const { data, error } = await client.from("profiles").select("display_name").eq("id", id).maybeSingle();
+    if (error) return;
+    const name = data?.display_name || "";
+    if (display) display.textContent = name || "Veni member";
+    if (input) input.value = name;
   };
 
   const loadLibrary = async () => {
@@ -109,6 +120,7 @@
 
   const render = async session => {
     const user = session?.user || null;
+    markSession(user);
     signedIn.forEach(el => el.hidden = !user);
     signedOut.forEach(el => el.hidden = !!user);
     userEmails.forEach(el => el.textContent = user?.email || "");
@@ -116,6 +128,10 @@
       el.hidden = (el.dataset.authView === "signed-in" && !user) ||
                   (el.dataset.authView === "signed-out" && !!user);
     });
+
+    const emailInput = document.querySelector("[data-account-email-input]");
+    if (emailInput && user?.email) emailInput.value = user.email;
+
     if (user) {
       await loadProfile(user.id);
       await loadLibrary();
@@ -163,6 +179,44 @@
     });
   });
 
+  document.querySelectorAll("[data-forgot-password-form]").forEach(form => {
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const email = String(fd.get("email") || "").trim();
+      const redirectTo = new URL("../reset-password/", window.location.href).href;
+
+      setStatus("Sending password reset email…");
+      const { error } = await client.auth.resetPasswordForEmail(email, { redirectTo });
+      if (error) return setStatus(error.message, "error");
+
+      form.reset();
+      setStatus("If that address belongs to a Veni Account, a password reset email has been sent.", "success");
+    });
+  });
+
+  document.querySelectorAll("[data-reset-password-form]").forEach(form => {
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const password = String(fd.get("password") || "");
+      const confirm = String(fd.get("confirm_password") || "");
+
+      if (password.length < 10) return setStatus("Please use a password of at least 10 characters.", "error");
+      if (password !== confirm) return setStatus("The passwords do not match.", "error");
+
+      const { data:{ session } } = await client.auth.getSession();
+      if (!session) return setStatus("This reset link is missing or has expired. Request a new one.", "error");
+
+      setStatus("Updating your password…");
+      const { error } = await client.auth.updateUser({ password });
+      if (error) return setStatus(error.message, "error");
+
+      form.reset();
+      setStatus("Password updated. You can continue using your Veni Account.", "success");
+    });
+  });
+
   document.querySelectorAll("[data-profile-form]").forEach(form => {
     form.addEventListener("submit", async e => {
       e.preventDefault();
@@ -177,6 +231,60 @@
     });
   });
 
+  document.querySelectorAll("[data-email-change-form]").forEach(form => {
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const email = String(fd.get("email") || "").trim();
+      if (!email) return;
+
+      setStatus("Requesting email address change…");
+      const { data, error } = await client.auth.updateUser({ email });
+      if (error) return setStatus(error.message, "error");
+
+      if (data?.user?.email === email) {
+        setStatus("Email address updated.", "success");
+      } else {
+        setStatus("Email change requested. Check the confirmation messages before the new address becomes active.", "success");
+      }
+    });
+  });
+
+  const deleteInput = document.querySelector("[data-delete-confirmation]");
+  const deleteButton = document.querySelector("[data-delete-account]");
+  const syncDeleteButton = () => {
+    if (!deleteButton) return;
+    deleteButton.disabled = String(deleteInput?.value || "").trim() !== "DELETE MY ACCOUNT";
+  };
+  deleteInput?.addEventListener("input", syncDeleteButton);
+  syncDeleteButton();
+
+  deleteButton?.addEventListener("click", async () => {
+    if (String(deleteInput?.value || "").trim() !== "DELETE MY ACCOUNT") return;
+
+    const confirmed = window.confirm(
+      "Delete this Veni Account permanently? This removes the account and current private Arcana history/journal data. This cannot be undone."
+    );
+    if (!confirmed) return;
+
+    deleteButton.disabled = true;
+    setStatus("Deleting your Veni Account…");
+
+    const { data, error } = await client.functions.invoke("delete-account", { body: {} });
+    if (error || !data?.deleted) {
+      deleteButton.disabled = false;
+      syncDeleteButton();
+      return setStatus(data?.error || error?.message || "We could not delete your account.", "error");
+    }
+
+    await client.auth.signOut({ scope: "local" }).catch(() => {});
+    try {
+      sessionStorage.removeItem("veni_after_auth");
+      sessionStorage.removeItem("veni_arcana_pending_draw");
+    } catch {}
+    window.location.href = "../../?account=deleted";
+  });
+
   document.querySelectorAll("[data-sign-out]").forEach(button => {
     button.addEventListener("click", async () => {
       await client.auth.signOut();
@@ -184,6 +292,12 @@
     });
   });
 
-  client.auth.onAuthStateChange((_event, session) => render(session));
+  client.auth.onAuthStateChange((event, session) => {
+    render(session);
+    if (event === "PASSWORD_RECOVERY") {
+      setStatus("Recovery link accepted. Choose a new password below.", "success");
+    }
+  });
+
   client.auth.getSession().then(({ data }) => render(data.session));
 })();
