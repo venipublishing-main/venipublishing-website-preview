@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Continue to Veni Account</title>
+</head>
+<body>
+  <main>
+    <h1>Continue to Veni Account</h1>
+    <p id="status">Open Veni Reserve and select Sign in to start a new request.</p>
+  </main>
+  <script>
+    const parameters = new URLSearchParams(window.location.search);
+    const entries = Array.from(parameters);
+    if (!window.location.hash && window.location.search.length <= 2048 &&
+        entries.length === 1 && entries[0][0] === "authorization_id" &&
+        /^[A-Za-z0-9._~-]{8,512}$/.test(entries[0][1])) {
+      const consent = new URL("https://venipublishing.co.za/account/authorize/");
+      consent.searchParams.set("authorization_id", entries[0][1]);
+      document.getElementById("status").textContent = "Opening your Veni Account sign-in request…";
+      window.location.replace(consent.href);
+    }
+  </script>
+</body>
+</html>
